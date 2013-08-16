@@ -48,12 +48,12 @@ end
 
 **Reset an API key**
 ```ruby
-  @livechat.agents(@agent_id).reset_api_key
+  @livechat.agents('john.doe@mycompany.com').reset_api_key
 ```
 
 **Remove an agent**
 ```ruby
-    @livechat.agents(@agent_id).delete
+  @livechat.agents('john.doe@mycompany.com').delete
 ```
 
 

@@ -77,7 +77,7 @@ Groups
 -----------
 
 
-Reports
+[Reports](http://developers.livechatinc.com/rest-api/#!reports)
 -----------
 
 **Get dashboard data**

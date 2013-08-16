@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<users type="array" count="15">
+  <user>
+    <created-at type="datetime">2007-09-12T17:05:33-07:00</created-at>
+    <details></details>
+    <external-id nil="true"></external-id>
+    <id type="integer">3</id>
+    <is-active type="boolean">true</is-active>
+    <last-login type="datetime">2011-06-20T07:48:51-07:00</last-login>
+    <locale-id type="integer" nil="true"></locale-id>
+    <name>Alexander Aghassipour</name>
+    <notes></notes>
+    <openid-url nil="true"></openid-url>
+    <organization-id type="integer" nil="true"></organization-id>
+    <phone>+45 25 24 20 70</phone>
+    <restriction-id type="integer">0</restriction-id>
+    <roles type="integer">2</roles>
+    <time-zone>Pacific Time (US &amp; Canada)</time-zone>
+    <updated-at type="datetime">2011-05-25T09:03:42-07:00</updated-at>
+    <uses-12-hour-clock type="boolean">false</uses-12-hour-clock>
+    <email>alexander@zendesk.com</email>
+    <is-verified type="boolean">true</is-verified>
+    <photo-url>https://support.zendesk.com/system/photos/0001/6052/aa_thumb.png\</photo-url\>
+    <groups type="array">
+      <group>
+        <created-at type="datetime">2009-01-14T11:24:54-08:00</created-at>
+        <id type="integer">8620</id>
+        <is-active type="boolean">true</is-active>
+        <name>Development</name>
+        <updated-at type="datetime">2009-05-14T00:22:37-07:00</updated-at>
+      </group>
+      <group>
+        <created-at type="datetime">2009-09-01T23:36:38-07:00</created-at>
+        <id type="integer">47266</id>
+        <is-active type="boolean">true</is-active>
+        <name>Job applications</name>
+        <updated-at type="datetime">2009-09-01T23:36:38-07:00</updated-at>
+      </group>
+      <group>
+        <created-at type="datetime">2010-03-03T10:16:09-08:00</created-at>
+        <id type="integer">66228</id>
+        <is-active type="boolean">true</is-active>
+        <name>Product</name>
+        <updated-at type="datetime">2010-03-03T10:16:09-08:00</updated-at>
+      </group>
+      <group>
+        <created-at type="datetime">2009-05-13T01:08:21-07:00</created-at>
+        <id type="integer">13840</id>
+        <is-active type="boolean">true</is-active>
+        <name>Security issue</name>
+        <updated-at type="datetime">2009-09-13T07:34:35-07:00</updated-at>
+      </group>
+    </groups>
+  </user>
+  <user>
+    <created-at type="datetime">2007-10-31T08:40:20-07:00</created-at>
+    <details></details>
+    <external-id nil="true"></external-id>
+    <id type="integer">223</id>
+    <is-active type="boolean">true</is-active>
+    <last-login type="datetime">2010-08-03T04:56:53-07:00</last-login>
+    <locale-id type="integer" nil="true"></locale-id>
+    <name>chris@maxroam.com</name>
+    <notes></notes>
+    <openid-url nil="true"></openid-url>
+    <organization-id type="integer" nil="true"></organization-id>
+    <phone></phone>
+    <restriction-id type="integer">4</restriction-id>
+    <roles type="integer">0</roles>
+    <time-zone>Copenhagen</time-zone>
+    <updated-at type="datetime">2010-01-05T14:19:49-08:00</updated-at>
+    <uses-12-hour-clock type="boolean">false</uses-12-hour-clock>
+    <email>chris@maxroam.com</email>
+    <is-verified type="boolean">true</is-verified>
+    <photo-url>https://support.zendesk.com/images/types/user_sm.png\</photo-url\>
+    <groups type="array"/>
+  </user>
+  <user>
+    <created-at type="datetime">2007-11-06T02:09:19-08:00</created-at>
+    <details nil="true"></details>
+    <external-id nil="true"></external-id>
+    <id type="integer">411</id>
+    <is-active type="boolean">true</is-active>
+    <last-login type="datetime" nil="true"></last-login>
+    <locale-id type="integer" nil="true"></locale-id>
+    <name>Don McAllister</name>
+    <notes nil="true"></notes>
+    <openid-url nil="true"></openid-url>
+    <organization-id type="integer" nil="true"></organization-id>
+    <phone nil="true"></phone>
+    <restriction-id type="integer">4</restriction-id>
+    <roles type="integer">0</roles>
+    <time-zone>Copenhagen</time-zone>
+    <updated-at type="datetime">2007-11-06T02:10:59-08:00</updated-at>
+    <uses-12-hour-clock type="boolean">false</uses-12-hour-clock>
+    <email>screencastsonline@gmail.com</email>
+    <is-verified type="boolean">false</is-verified>
+    <photo-url>https://support.zendesk.com/images/types/user_sm.png\</photo-url\>
+    <groups type="array"/>
+  </user>
+  <user>
+    <created-at type="datetime">2007-11-07T14:10:02-08:00</created-at>
+    <details nil="true"></details>
+    <external-id nil="true"></external-id>
+    <id type="integer">510</id>
+    <is-active type="boolean">true</is-active>
+    <last-login type="datetime">2007-12-06T06:34:50-08:00</last-login>
+    <locale-id type="integer" nil="true"></locale-id>
+    <name>Stacey Hager</name>
+    <notes nil="true"></notes>
+    <openid-url nil="true"></openid-url>
+    <organization-id type="integer" nil="true"></organization-id>
+    <phone nil="true"></phone>
+    <restriction-id type="integer">4</restriction-id>
+    <roles type="integer">0</roles>
+    <time-zone>Copenhagen</time-zone>
+    <updated-at type="datetime">2007-12-06T06:34:50-08:00</updated-at>
+    <uses-12-hour-clock type="boolean">false</uses-12-hour-clock>
+    <email>sahager@ofnlaw.com</email>
+    <is-verified type="boolean">true</is-verified>
+    <photo-url>https://support.zendesk.com/images/types/user_sm.png\</photo-url\>
+    <groups type="array"/>
+  </user>
+  <user>
+    <created-at type="datetime">2007-11-11T15:01:14-08:00</created-at>
+    <details nil="true"></details>
+    <external-id nil="true"></external-id>
+    <id type="integer">634</id>
+    <is-active type="boolean">true</is-active>
+    <last-login type="datetime" nil="true"></last-login>
+    <locale-id type="integer" nil="true"></locale-id>
+    <name>Trevor Cooper</name>
+    <notes nil="true"></notes>
+    <openid-url nil="true"></openid-url>
+    <organization-id type="integer" nil="true"></organization-id>
+    <phone nil="true"></phone>
+    <restriction-id type="integer">4</restriction-id>
+    <roles type="integer">0</roles>
+    <time-zone>Copenhagen</time-zone>
+    <updated-at type="datetime">2007-11-11T15:01:49-08:00</updated-at>
+    <uses-12-hour-clock type="boolean">false</uses-12-hour-clock>
+    <email>trevorcooper@roadrunner.com</email>
+    <is-verified type="boolean">true</is-verified>
+    <photo-url>https://support.zendesk.com/images/types/user_sm.png\</photo-url\>
+    <groups type="array"/>
+  </user>
+  <user>
+    <created-at type="datetime">2007-11-11T22:07:56-08:00</created-at>
+    <details nil="true"></details>
+    <external-id nil="true"></external-id>
+    <id type="integer">638</id>
+    <is-active type="boolean">true</is-active>
+    <last-login type="datetime">2008-05-09T13:32:38-07:00</last-login>
+    <locale-id type="integer" nil="true"></locale-id>
+    <name>Danny Combs</name>
+    <notes nil="true"></notes>
+    <openid-url nil="true"></openid-url>
+    <organization-id type="integer" nil="true"></organization-id>
+    <phone nil="true"></phone>
+    <restriction-id type="integer">4</restriction-id>
+    <roles type="integer">0</roles>
+    <time-zone>Copenhagen</time-zone>
+    <updated-at type="datetime">2008-05-09T13:32:38-07:00</updated-at>
+    <uses-12-hour-clock type="boolean">false</uses-12-hour-clock>
+    <email>dcombs@pueblo60.k12.co.us</email>
+    <is-verified type="boolean">true</is-verified>
+    <photo-url>https://support.zendesk.com/images/types/user_sm.png\</photo-url\>
+    <groups type="array"/>
+  </user>
+  <user>
+    <created-at type="datetime">2007-11-13T08:31:19-08:00</created-at>
+    <details nil="true"></details>
+    <external-id nil="true"></external-id>
+    <id type="integer">692</id>
+    <is-active type="boolean">true</is-active>
+    <last-login type="datetime" nil="true"></last-login>
+    <locale-id type="integer" nil="true"></locale-id>
+    <name>Austin Healy</name>
+    <notes nil="true"></notes>
+    <openid-url nil="true"></openid-url>
+    <organization-id type="integer" nil="true"></organization-id>
+    <phone nil="true"></phone>
+    <restriction-id type="integer">4</restriction-id>
+    <roles type="integer">0</roles>
+    <time-zone>Copenhagen</time-zone>
+    <updated-at type="datetime">2007-11-13T08:31:19-08:00</updated-at>
+    <uses-12-hour-clock type="boolean">false</uses-12-hour-clock>
+    <email>ahealy@ald.lib.co.us</email>
+    <is-verified type="boolean">true</is-verified>
+    <photo-url>https://support.zendesk.com/images/types/user_sm.png\</photo-url\>
+    <groups type="array"/>
+  </user>
+  <user>
+    <created-at type="datetime">2007-11-13T16:33:54-08:00</created-at>
+    <details nil="true"></details>
+    <external-id nil="true"></external-id>
+    <id type="integer">718</id>
+    <is-active type="boolean">true</is-active>
+    <last-login type="datetime" nil="true"></last-login>
+    <locale-id type="integer" nil="true"></locale-id>
+    <name>texter vaid</name>
+    <notes nil="true"></notes>
+    <openid-url nil="true"></openid-url>
+    <organization-id type="integer" nil="true"></organization-id>
+    <phone nil="true"></phone>
+    <restriction-id type="integer">4</restriction-id>
+    <roles type="integer">0</roles>
+    <time-zone>Copenhagen</time-zone>
+    <updated-at type="datetime">2007-11-13T17:03:49-08:00</updated-at>
+    <uses-12-hour-clock type="boolean">false</uses-12-hour-clock>
+    <email>tvaid@exitz.com</email>
+    <is-verified type="boolean">true</is-verified>
+    <photo-url>https://support.zendesk.com/images/types/user_sm.png\</photo-url\>
+    <groups type="array"/>
+  </user>
+  <user>
+    <created-at type="datetime">2007-11-13T16:54:40-08:00</created-at>
+    <details nil="true"></details>
+    <external-id nil="true"></external-id>
+    <id type="integer">720</id>
+    <is-active type="boolean">true</is-active>
+    <last-login type="datetime">2010-01-12T09:47:50-08:00</last-login>
+    <locale-id type="integer" nil="true"></locale-id>
+    <name>Jonathan Page</name>
+    <notes nil="true"></notes>
+    <openid-url nil="true"></openid-url>
+    <organization-id type="integer" nil="true"></organization-id>
+    <phone nil="true"></phone>
+    <restriction-id type="integer">4</restriction-id>
+    <roles type="integer">0</roles>
+    <time-zone>Copenhagen</time-zone>
+    <updated-at type="datetime">2009-07-15T14:44:54-07:00</updated-at>
+    <uses-12-hour-clock type="boolean">false</uses-12-hour-clock>
+    <email>jpage01@mac.com</email>
+    <is-verified type="boolean">true</is-verified>
+    <photo-url>https://support.zendesk.com/images/types/user_sm.png\</photo-url\>
+    <groups type="array"/>
+  </user>
+  <user>
+    <created-at type="datetime">2007-11-14T08:15:49-08:00</created-at>
+    <details nil="true"></details>
+    <external-id nil="true"></external-id>
+    <id type="integer">761</id>
+    <is-active type="boolean">true</is-active>
+    <last-login type="datetime">2007-11-14T12:14:08-08:00</last-login>
+    <locale-id type="integer" nil="true"></locale-id>
+    <name>Mark Huber</name>
+    <notes nil="true"></notes>
+    <openid-url nil="true"></openid-url>
+    <organization-id type="integer" nil="true"></organization-id>
+    <phone nil="true"></phone>
+    <restriction-id type="integer">4</restriction-id>
+    <roles type="integer">0</roles>
+    <time-zone>Copenhagen</time-zone>
+    <updated-at type="datetime">2007-11-14T12:49:57-08:00</updated-at>
+    <uses-12-hour-clock type="boolean">false</uses-12-hour-clock>
+    <email>mhuber@mtlakes.org</email>
+    <is-verified type="boolean">true</is-verified>
+    <photo-url>https://support.zendesk.com/images/types/user_sm.png\</photo-url\>
+    <groups type="array"/>
+  </user>
+  <user>
+    <created-at type="datetime">2007-11-15T13:27:04-08:00</created-at>
+    <details nil="true"></details>
+    <external-id nil="true"></external-id>
+    <id type="integer">851</id>
+    <is-active type="boolean">true</is-active>
+    <last-login type="datetime">2007-11-20T13:39:49-08:00</last-login>
+    <locale-id type="integer" nil="true"></locale-id>
+    <name>Morten Viholt</name>
+    <notes nil="true"></notes>
+    <openid-url nil="true"></openid-url>
+    <organization-id type="integer" nil="true"></organization-id>
+    <phone nil="true"></phone>
+    <restriction-id type="integer">4</restriction-id>
+    <roles type="integer">0</roles>
+    <time-zone>Copenhagen</time-zone>
+    <updated-at type="datetime">2007-11-20T13:39:49-08:00</updated-at>
+    <uses-12-hour-clock type="boolean">false</uses-12-hour-clock>
+    <email>mortenviholt@hotmail.com</email>
+    <is-verified type="boolean">true</is-verified>
+    <photo-url>https://support.zendesk.com/images/types/user_sm.png\</photo-url\>
+    <groups type="array"/>
+  </user>
+  <user>
+    <created-at type="datetime">2007-11-15T17:42:25-08:00</created-at>
+    <details nil="true"></details>
+    <external-id nil="true"></external-id>
+    <id type="integer">856</id>
+    <is-active type="boolean">true</is-active>
+    <last-login type="datetime">2010-01-11T07:56:52-08:00</last-login>
+    <locale-id type="integer" nil="true"></locale-id>
+    <name>Trevor Cooper</name>
+    <notes nil="true"></notes>
+    <openid-url nil="true"></openid-url>
+    <organization-id type="integer" nil="true"></organization-id>
+    <phone nil="true"></phone>
+    <restriction-id type="integer">4</restriction-id>
+    <roles type="integer">0</roles>
+    <time-zone>Copenhagen</time-zone>
+    <updated-at type="datetime">2007-11-16T12:02:03-08:00</updated-at>
+    <uses-12-hour-clock type="boolean">false</uses-12-hour-clock>
+    <email>tcooper@ucsd.edu</email>
+    <is-verified type="boolean">true</is-verified>
+    <photo-url>https://support.zendesk.com/images/types/user_sm.png\</photo-url\>
+    <groups type="array"/>
+  </user>
+  <user>
+    <created-at type="datetime">2007-11-16T10:15:10-08:00</created-at>
+    <details nil="true"></details>
+    <external-id nil="true"></external-id>
+    <id type="integer">876</id>
+    <is-active type="boolean">true</is-active>
+    <last-login type="datetime">2008-02-13T08:14:33-08:00</last-login>
+    <locale-id type="integer" nil="true"></locale-id>
+    <name>Marc Drescher</name>
+    <notes nil="true"></notes>
+    <openid-url nil="true"></openid-url>
+    <organization-id type="integer" nil="true"></organization-id>
+    <phone nil="true"></phone>
+    <restriction-id type="integer">4</restriction-id>
+    <roles type="integer">0</roles>
+    <time-zone>Copenhagen</time-zone>
+    <updated-at type="datetime">2008-02-13T08:14:33-08:00</updated-at>
+    <uses-12-hour-clock type="boolean">false</uses-12-hour-clock>
+    <email>mdrescher@collegeofthedesert.edu</email>
+    <is-verified type="boolean">true</is-verified>
+    <photo-url>https://support.zendesk.com/images/types/user_sm.png\</photo-url\>
+    <groups type="array"/>
+  </user>
+  <user>
+    <created-at type="datetime">2007-11-18T19:53:15-08:00</created-at>
+    <details nil="true"></details>
+    <external-id nil="true"></external-id>
+    <id type="integer">948</id>
+    <is-active type="boolean">true</is-active>
+    <last-login type="datetime" nil="true"></last-login>
+    <locale-id type="integer" nil="true"></locale-id>
+    <name>Richie</name>
+    <notes nil="true"></notes>
+    <openid-url nil="true"></openid-url>
+    <organization-id type="integer" nil="true"></organization-id>
+    <phone nil="true"></phone>
+    <restriction-id type="integer">4</restriction-id>
+    <roles type="integer">0</roles>
+    <time-zone>Copenhagen</time-zone>
+    <updated-at type="datetime">2007-11-18T19:54:19-08:00</updated-at>
+    <uses-12-hour-clock type="boolean">false</uses-12-hour-clock>
+    <email>richie.dealmeida@gmail.com</email>
+    <is-verified type="boolean">true</is-verified>
+    <photo-url>https://support.zendesk.com/images/types/user_sm.png\</photo-url\>
+    <groups type="array"/>
+  </user>
+  <user>
+    <created-at type="datetime">2007-11-18T23:49:14-08:00</created-at>
+    <details nil="true"></details>
+    <external-id nil="true"></external-id>
+    <id type="integer">952</id>
+    <is-active type="boolean">true</is-active>
+    <last-login type="datetime" nil="true"></last-login>
+    <locale-id type="integer" nil="true"></locale-id>
+    <name>Chris Bauman</name>
+    <notes nil="true"></notes>
+    <openid-url nil="true"></openid-url>
+    <organization-id type="integer" nil="true"></organization-id>
+    <phone nil="true"></phone>
+    <restriction-id type="integer">4</restriction-id>
+    <roles type="integer">0</roles>
+    <time-zone>Copenhagen</time-zone>
+    <updated-at type="datetime">2007-11-18T23:49:14-08:00</updated-at>
+    <uses-12-hour-clock type="boolean">false</uses-12-hour-clock>
+    <email>chris.ryan.bauman@gmail.com</email>
+    <is-verified type="boolean">true</is-verified>
+    <photo-url>https://support.zendesk.com/images/types/user_sm.png\</photo-url\>
+    <groups type="array"/>
+  </user>
+</users>

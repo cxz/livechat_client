@@ -4,7 +4,7 @@ LiveChat API Ruby Client
 Connection
 ----------
 
-Basic Auth over HTTPS is currently the supported way to authenticate API requests.
+Basic Auth over HTTPS is used to authenticate API requests.
 
 ```ruby
 require "livechat"
@@ -15,111 +15,46 @@ require "livechat"
 end
 ```
 
-
-Collections
------------
-Collections are an implementation detail of this gem, they are Enumerable objects. The intention is to make fetching results that span across "pages"
-transparent or fetching a specific page of results easily. Collections define:
-
-  * `fetch`        - perform actual GET request manually, returns response body as JSON or XML
-  * `each`         - iterate the individual results of the collection (calling `fetch` on your behalf)
-  * `next_page`    - GET next page of results for that collection
-  * `per_page(50)` - change the number of results for a page of results
-  * `page(3)`      - GET specific page of results
-
-Collections of resources are fetched as lazily as possible. For example `@livechat.agents` does not hit the API until it is iterated over
-(by calling `each`) or until an item is asked for (e.g., `@livechat.users[0]`).
-
-This allows us chain methods in cool ways like:
-
-  * `@livechat.agents.create({ ... data ... })`
-  * `@livechat.agents(123).update({ ... data ... })`
-  * `@livechat.agents(123).delete`
-
-GET requests are not made until the last possible moment. Calling `fetch` will return the HTTP response (first looking in the cache). If you
-want to avoid the cached result you can call `fetch(true)` which will force the client to update its internal cache with the latest HTTP response.
-
-PUT (update), POST (create) and DELETE (delete) requests are fired immediately.
-
-
-
-Agents
+[Agents](http://developers.livechatinc.com/rest-api/#!agents)
 -----
 
-**GET**
-
-You may fetch agents individually by id
+**List all agents**
 
 ```ruby
-@livechat.agents(123)                       # return agent by id
-```
-
-all users
-
-```ruby
-@livechat.agents                          # all agents
+@livechat.agents.fetch                    # all agents
 @livechat.agents.each {|user| ..code.. }  # iterate over requested agents
-@livechat.agents.per_page(100)            # all users in account (v2 should accept `?per_page=NUMBER`)
-@livechat.agents.page(2)                    # all users in account (v1 currently accepts `?page=NUMBER`)
-@livechat.agents.next_page                  # all users in account (v1 currently accepts `?page=NUMBER`)
 ```
 
-a list of users matching criteria
-
+**Get a single agent details**
 ```ruby
-@livechat.users("Bobo")                    # all users with name matching all or part of "Bobo"
-@livechat.users("Bobo", :role => :admin)   # all users with name matching all or part of "Bobo" who are admins
-@livechat.users(:role => :agent)           # all users who are agents
-@livechat.users(:role => "agent")          # all users who are agents
-@livechat.users(:group => 123)             # all users who are members of group id
-@livechat.users(:organization => 123)      # all users who are members of organization id
-@livechat.user(123).identities             # all identities in account for a given user
+@livechat.agents('john.doe@mycompany.com)
 ```
 
-**POST**
-
-A successful POST will return the created user in the response body along with a Location header with the URI to the newly created resource
-
+**Create a new agent**
 ```ruby
-# create user from hash
-@livechat.users.create({:name => "Bobo Yodawg",
-                       :email => "bc@email.com",
-                       :remote_photo_url => "http://d.com/image.png",
-                       :roles => 4})
-
-# create user with block
-@livechat.users.create do |user|
-  user[:name] = "Bobo Yodawg"
-  user[:email] = "bc@email.com"
-  user[:remote_photo_url] = "http://d.com/image.png"
-  user[:roles] = 4
+@livechat.agents.create do |a|
+  a[:login] = @alice_id
+  a[:name] = 'Alice'
 end
 ```
 
-**PUT**
-
-A successful PUT will return the updated user in the response body
-
-edit user with hash
-
+**Update an agent**
 ```ruby
-@livechat.users(123).update({:remote_photo_url => "yo@dawg.com"})
-```
-
-or edit user with block
-
-```ruby
-@livechat.users(123).update do |user|
-  user[:remote_photo_url] = "yo@dawg.com"
+@livechat.agents(@jane_id).update do |a|
+  a[:job_title] = 'Tester'
+  a[:status] = 'not accepting chats'
 end
 ```
 
-**DELETE**
-
+**Reset an API key**
 ```ruby
-@livechat.users(123).delete
+  @livechat.agents(@agent_id).reset_api_key
 ```
 
+**Remove an agent**
+```ruby
+    @livechat.agents(@agent_id).delete
+```
 
 
 Canned responses

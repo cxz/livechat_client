@@ -1,7 +1,7 @@
-module Livechat
+module LiveChat
   # Defines constants and methods related to configuration
   module Config
-    # An array of valid keys in the options hash when configuring a {Livechat::Client}
+    # An array of valid keys in the options hash when configuring a {LiveChat::Client}
     VALID_OPTIONS_KEYS = [
       :adapter,
       :login,
@@ -19,8 +19,8 @@ module Livechat
     #
     # @note Not all methods support the XML format.
     VALID_FORMATS = [
-      :json,
-      :xml
+      :json
+      #,:xml
     ].freeze
 
     DEFAULT_VERSION = '2'
@@ -28,7 +28,7 @@ module Livechat
     # The adapter that will be used to connect if none is set
     #
     # @note The default faraday adapter is Net::HTTP.
-    DEFAULT_ADAPTER = :patron
+    DEFAULT_ADAPTER = :net_http #:patron
 
     # By default, don't set an application key
     DEFAULT_API_KEY = nil
@@ -42,7 +42,7 @@ module Livechat
     DEFAULT_PROXY = nil
 
     # The user agent that will be sent to the API endpoint if none is set
-    DEFAULT_USER_AGENT = "Livechat Ruby Client #{Livechat::VERSION}".freeze
+    DEFAULT_USER_AGENT = "LiveChat Ruby Client #{LiveChat::VERSION}".freeze
 
     DEFAULT_GATEWAY = nil
 

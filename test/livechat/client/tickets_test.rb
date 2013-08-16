@@ -1,8 +1,8 @@
 require "test_helper"
 
-describe Livechat::Client::Tickets do
+describe LiveChat::Client::Tickets do
   before do
-    @zendesk = Livechat::Client.new do |config|
+    @zendesk = LiveChat::Client.new do |config|
       config.account = ENDPOINT
       config.basic_auth EMAIL, PASSWORD
     end

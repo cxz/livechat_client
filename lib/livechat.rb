@@ -3,6 +3,6 @@ require "livechat/config"
 require "livechat/api"
 require "livechat/client"
 
-module Livechat
+module LiveChat
   extend Config
 end

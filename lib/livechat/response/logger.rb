@@ -1,4 +1,4 @@
-module Livechat
+module LiveChat
   module Response
     class Logger < Faraday::Response::Middleware
       def on_complete(env)

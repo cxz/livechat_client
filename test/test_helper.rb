@@ -15,7 +15,7 @@ def fixture(file)
   File.new(fixture_path + "/" + file).readlines.to_s
 end
 
-FORMATS = Livechat::Config::VALID_FORMATS
+FORMATS = LiveChat::Config::VALID_FORMATS
 
 if ENV["LIVE"] #################################################################
 

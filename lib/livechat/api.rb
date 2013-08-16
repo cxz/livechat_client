@@ -1,10 +1,10 @@
-module Livechat
+module LiveChat
   class API # inherited by Client
     attr_accessor *Config::VALID_OPTIONS_KEYS
 
-    # Livechat::Client.new
+    # LiveChat::Client.new
     def initialize(options={})
-      options = Livechat.options.merge(options)
+      options = LiveChat.options.merge(options)
       Config::VALID_OPTIONS_KEYS.each do |key|
         send("#{key}=", options[key])
       end

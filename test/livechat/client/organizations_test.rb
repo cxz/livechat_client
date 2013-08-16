@@ -1,8 +1,8 @@
 require "test_helper"
 
-describe Livechat::Client::Organizations do
+describe LiveChat::Client::Organizations do
   before do
-    @zendesk = Livechat::Client.new do |config|
+    @zendesk = LiveChat::Client.new do |config|
       config.account = ENDPOINT
       config.basic_auth EMAIL, PASSWORD
     end
@@ -58,7 +58,7 @@ describe Livechat::Client::Organizations do
     it "should delete organization" do
       organization = @zendesk.organizations.create({:name => "Visionaries"})
       @zendesk.organizations(organization[:id]).delete
-      assert_raises(Livechat::NotFound) { @zendesk.organizations(organization[:id]).fetch }
+      assert_raises(LiveChat::NotFound) { @zendesk.organizations(organization[:id]).fetch }
     end
   end
 end

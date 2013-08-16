@@ -1,8 +1,8 @@
 require "test_helper"
 
-describe Livechat::Client::Forums do
+describe LiveChat::Client::Forums do
   before do
-    @zendesk = Livechat::Client.new do |config|
+    @zendesk = LiveChat::Client.new do |config|
       config.account = ENDPOINT
       config.basic_auth EMAIL, PASSWORD
     end
@@ -63,7 +63,7 @@ describe Livechat::Client::Forums do
     it "should delete forum" do
       forum = @zendesk.forums.create({:name => "FAQ"})
       @zendesk.forums(forum["id"]).delete
-      assert_raises(Livechat::NotFound) { @zendesk.forums(forum.id).fetch }
+      assert_raises(LiveChat::NotFound) { @zendesk.forums(forum.id).fetch }
     end
   end
 end

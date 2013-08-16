@@ -3,7 +3,7 @@ require "faraday_middleware"
 require "livechat/response/logger"
 require "livechat/response/raise_http_4xx"
 
-module Livechat
+module LiveChat
   module Connection
     private
 
@@ -22,11 +22,11 @@ module Livechat
 
       conn = Faraday::Connection.new(options) do |builder|
         # As with Rack, order matters. Be mindful.
-        # TODO: builder.use Livechat::Request::MultipartWithFile
+        # TODO: builder.use LiveChat::Request::MultipartWithFile
         # TODO: builder.use Faraday::Request::OAuth, authentication if authenticated?
         builder.use Faraday::Request::Multipart
         builder.use Faraday::Request::UrlEncoded
-        builder.use Livechat::Response::RaiseHttp4xx
+        builder.use LiveChat::Response::RaiseHttp4xx
         builder.use Faraday::Response::Mashify
         case client.format.to_sym
         when :json

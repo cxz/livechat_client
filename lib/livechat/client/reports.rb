@@ -1,4 +1,4 @@
-module Livechat
+module LiveChat
   class Client
     module Reports
       def reports(*args)

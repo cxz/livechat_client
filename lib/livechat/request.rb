@@ -1,6 +1,6 @@
 require "livechat/connection"
 
-module Livechat
+module LiveChat
   module Request
     extend Connection
 

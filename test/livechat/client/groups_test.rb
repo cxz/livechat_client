@@ -1,8 +1,8 @@
 require "test_helper"
 
-describe Livechat::Client::Groups do
+describe LiveChat::Client::Groups do
   before do
-    @zendesk = Livechat::Client.new do |config|
+    @zendesk = LiveChat::Client.new do |config|
       config.account = ENDPOINT
       config.basic_auth EMAIL, PASSWORD
     end
@@ -57,7 +57,7 @@ describe Livechat::Client::Groups do
     it "should delete group" do
       group = @zendesk.groups.create({:name => "Visionaries"})
       @zendesk.groups(group.id).delete
-      assert_raises(Livechat::NotFound) { @zendesk.groups(group.id).fetch }
+      assert_raises(LiveChat::NotFound) { @zendesk.groups(group.id).fetch }
     end
   end
 end

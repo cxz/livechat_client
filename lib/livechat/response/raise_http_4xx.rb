@@ -1,4 +1,4 @@
-module Livechat
+module LiveChat
   class Error < StandardError
     attr_reader :http_headers
 
@@ -20,17 +20,17 @@ module Livechat
       def on_complete(env)
         case env[:status].to_i
         when 400
-          raise Livechat::BadRequest.new(error_message(env), env[:response_headers])
+          raise LiveChat::BadRequest.new(error_message(env), env[:response_headers])
         when 401
-          raise Livechat::Unauthorized.new(error_message(env), env[:response_headers])
+          raise LiveChat::Unauthorized.new(error_message(env), env[:response_headers])
         when 403
-          raise Livechat::Forbidden.new(error_message(env), env[:response_headers])
+          raise LiveChat::Forbidden.new(error_message(env), env[:response_headers])
         when 404
-          raise Livechat::NotFound.new(error_message(env), env[:response_headers])
+          raise LiveChat::NotFound.new(error_message(env), env[:response_headers])
         when 406
-          raise Livechat::NotAcceptable.new(error_message(env), env[:response_headers])
+          raise LiveChat::NotAcceptable.new(error_message(env), env[:response_headers])
         when 420
-          raise Livechat::Chill.new(error_message(env), env[:response_headers])
+          raise LiveChat::Chill.new(error_message(env), env[:response_headers])
         end
       end
 

@@ -1,7 +1,7 @@
 require "livechat/connection"
 require "livechat/paginator"
 
-module Livechat
+module LiveChat
   class Collection
     include Paginator  # `clear_cache`, `fetch`, `each`, `[]`, `page`, `per_page`, `method_missing`
     include Connection

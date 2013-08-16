@@ -1,4 +1,4 @@
-module Livechat
+module LiveChat
   module Response
     # http://rubydoc.info/gems/faraday/0.7.4/Faraday/Response/Middleware
     # Faraday::Response::Middleware

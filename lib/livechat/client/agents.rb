@@ -1,4 +1,4 @@
-module Livechat
+module LiveChat
   class Client
     module Agents
       # @livechat.agents                               - a list of agents

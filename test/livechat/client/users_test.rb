@@ -1,8 +1,8 @@
 require "test_helper"
 
-describe Livechat::Client::Users do
+describe LiveChat::Client::Users do
   before do
-    @zendesk = Livechat::Client.new do |config|
+    @zendesk = LiveChat::Client.new do |config|
       config.account = ENDPOINT
       config.basic_auth EMAIL, PASSWORD
     end
@@ -71,7 +71,7 @@ describe Livechat::Client::Users do
     it "should delete user" do
       user = @zendesk.users.create({:name => "Hong Kong Phooey"})
       @zendesk.users(user[:id]).delete
-      assert_raises(Livechat::NotFound) { @zendesk.users(user[:id]).fetch }
+      assert_raises(LiveChat::NotFound) { @zendesk.users(user[:id]).fetch }
     end
   end
 end

@@ -6,7 +6,7 @@ require 'livechat/version'
 
 Gem::Specification.new do |g|
   g.name = "livechat_client"
-  g.version = Livechat::VERSION.dup
+  g.version = LiveChat::VERSION.dup
   g.platform = Gem::Platform::RUBY
   g.authors = ["Alexandre Maia"]
   g.email = ["alexandre.maia@gmail.com"]
@@ -30,10 +30,10 @@ Gem::Specification.new do |g|
   g.add_runtime_dependency "faraday", ">= 0.8.0"
   g.add_runtime_dependency "faraday_middleware", "0.8.7"
   g.add_runtime_dependency "multi_json"
-  g.add_runtime_dependency "patron"
+  #g.add_runtime_dependency "patron"
 
-  g.files = `git ls-files -x Gemfile.lock`.split("\n") rescue ''
-  g.require_paths = ["lib"]
-  g.test_files = `git ls-files -- {test,spec,features}/*`.split("\n")
+  #g.files = `git ls-files -x Gemfile.lock`.split("\n") rescue ''
+  #g.require_paths = ["lib"]
+  #g.test_files = `git ls-files -- {test,spec,features}/*`.split("\n")
 
 end

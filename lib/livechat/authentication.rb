@@ -1,4 +1,4 @@
-module Livechat
+module LiveChat
   module Authentication
     private
 

@@ -1,4 +1,4 @@
-module Livechat
+module LiveChat
   class Client
     module CannedResponses
       # @livechat.canned_responses                     - a list of cannned responses

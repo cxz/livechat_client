@@ -35,13 +35,13 @@ describe LiveChat::Client::Agents do
     WebMock.reset!
   end
 
-  it "List all agents" do
+  it "lists all agents" do
     agents = @livechat.agents.fetch
     assert agents
     assert_equal 2, agents.length
   end
 
-  it "Get a single agent details" do
+  it "gets a single agent details" do
     agent = @livechat.agents(@john_id).fetch
     assert_equal @john_id, agent['login']
   end
@@ -57,7 +57,7 @@ describe LiveChat::Client::Agents do
   #  notifications – object (allowed keys: new_visitor, returning_visitor, queued_visitor, visitor_is_typing, new_goal, allowed values: 0 or 1).
   #  daily_summary – 0 or 1 (default).
   #  max_chats_count – defaults to 6.
-  it "Create a new agent" do
+  it "creates a new agent" do
     agent = @livechat.agents.create do |a|
       a[:login] = @alice_id
       a[:name] = 'Alice'
@@ -65,18 +65,18 @@ describe LiveChat::Client::Agents do
   end
 
   #all properties are optional
-  it "Update an agent" do
+  it "updates an agent" do
     @livechat.agents(@jane_id).update do |a|
       a[:job_title] = 'Tester'
       a[:status] = 'not accepting chats'
     end
   end
 
-  it "Reset an API key" do
+  it "resets an API key" do
     @livechat.agents(@agent_id).reset_api_key
   end
 
-  it "Remove an agent" do
+  it "removes an agent" do
     @livechat.agents(@agent_id).delete
   end
 

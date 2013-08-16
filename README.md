@@ -80,6 +80,60 @@ Groups
 Reports
 -----------
 
+**Get dashboard data**
+```ruby
+  @livechat.reports.dashboard
+```
+
+**Get dashboard data for agent**
+```ruby
+  @livechat.reports.dashboard(:agent => 'john.doe@mycompany.com')
+```
+
+**Get dashboard data for group**
+```ruby
+  @livechat.reports.dashboard(:group => 1)
+```
+
+**Get chats report**
+```ruby
+  @livechat.reports.chats(:date_from => '2013-01-01')
+```
+
+**Get ratings report**
+```ruby
+  @livechat.reports.ratings(:group => 1)
+```
+
+**Get ratings ranking**
+```ruby
+  @livechat.reports.ratings_ranking(:group => 1)
+```
+
+**Get queued visitors report**
+```ruby
+  @livechat.reports.queued_visitors(:date_from => '2013-01-01')
+```
+
+**Get queue waiting times report**
+```ruby
+  @livechat.reports.queued_visitors_waiting_times(:date_from => '2013-01-01')
+```
+
+**Get availability report**
+```ruby
+  @livechat.reports.availability
+```
+
+**Get chatting time report**
+```ruby
+  @livechat.reports.chatting_time
+```
+
+**Get goals report**
+```ruby
+  @livechat.reports.goals
+```
 
 
 Status

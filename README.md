@@ -27,7 +27,7 @@ end
 
 **Get a single agent details**
 ```ruby
-@livechat.agents('john.doe@mycompany.com)
+@livechat.agents('john.doe@mycompany.com')
 ```
 
 **Create a new agent**

@@ -17,27 +17,20 @@ module LiveChat
         },
         :proxy => client.proxy,
         :ssl => {:verify => false},
-        :url => 'https://api.livechatinc.com'
+        :url => client.endpoint
       }
 
       conn = Faraday::Connection.new(options) do |builder|
-        # As with Rack, order matters. Be mindful.
-        # TODO: builder.use LiveChat::Request::MultipartWithFile
-        # TODO: builder.use Faraday::Request::OAuth, authentication if authenticated?
+        # order matters, adapter must be the last.
         builder.use Faraday::Request::Multipart
         builder.use Faraday::Request::UrlEncoded
         builder.use LiveChat::Response::RaiseHttp4xx
         builder.use Faraday::Response::Mashify
-        case client.format.to_sym
-        when :json
-          builder.use Faraday::Response::ParseJson
-        when :xml
-          builder.use Faraday::Response::ParseXml
-        end
+        builder.use Faraday::Response::ParseJson
         #builder.use Faraday::Response::Logger
         # TODO: builder.use Faraday::Response::RaiseHttp5xx
         # finally
-        builder.adapter(@client.adapter)
+        builder.adapter @client.adapter
       end
 
       conn.basic_auth(@client.login, @client.api_key)

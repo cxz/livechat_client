@@ -5,7 +5,7 @@ Bundler::GemHelper.install_tasks
 
 desc "Run tests"
 task :test do
-  system "ruby -Ilib -Itest -e 'ARGV.each { |f| load f }' test/livechat/*_test.rb test/livechat/**/*_test.rb"
+  system "ruby -Ilib -Itest -e 'ARGV.each { |f| load f }' test/livechat/**/*_test.rb"
 end
 
 task :default => :test

@@ -1,0 +1,16 @@
+[
+    {
+        "name": "John Doe",
+        "permission": "owner",
+        "avatar": "livechat.s3.amazonaws.com/1011121/all/avatars/bdd8924fcbcdbddbeaf60c19b238b0b0.jpg",
+        "login": "john.doe@mycompany.com",
+        "status": "accepting chats"
+    },
+    {
+        "name": "Jane Doe",
+        "permission": "normal",
+        "avatar": "livechat.s3.amazonaws.com/1011121/all/avatars/a557c601619878e28343cddb9a1b8445.jpg",
+        "login": "jane.doe@mycompany.com",
+        "status": "offline"
+    }
+]

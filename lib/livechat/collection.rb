@@ -21,9 +21,8 @@ module LiveChat
         @query[:path] = @path
       when Integer
         @query[:path] = "#{@path}/#{selection}"
-      when String
-        @query[:path]  = @path
-        @query[:query] = selection
+        when String
+        @query[:path] = "#{@path}/#{selection}"
       end
     end
 
@@ -53,9 +52,7 @@ module LiveChat
       request(:delete, @query.delete(:path), options)
     end
 
-
-    private #######################################################
-
+    private
 
     def request(method, path, options)
       # `connection` defined in lib/livechat/connection.rb

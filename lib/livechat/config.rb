@@ -4,6 +4,7 @@ module LiveChat
     # An array of valid keys in the options hash when configuring a {LiveChat::Client}
     VALID_OPTIONS_KEYS = [
       :adapter,
+      :endpoint,
       :login,
       :api_key,
       :api_version,
@@ -15,13 +16,7 @@ module LiveChat
 
     attr_accessor *VALID_OPTIONS_KEYS
 
-    # An array of valid request/response formats
-    #
-    # @note Not all methods support the XML format.
-    VALID_FORMATS = [
-      :json
-      #,:xml
-    ].freeze
+    DEFAULT_ENDPOINT = 'https://api.livechatinc.com'
 
     DEFAULT_VERSION = '2'
 
@@ -32,11 +27,6 @@ module LiveChat
 
     # By default, don't set an application key
     DEFAULT_API_KEY = nil
-
-    # The response format appended to the path and sent in the 'Accept' header if none is set
-    #
-    # @note JSON is preferred over XML because it is more concise and faster to parse.
-    DEFAULT_FORMAT = :json
 
     # By default, don't use a proxy server
     DEFAULT_PROXY = nil
@@ -61,10 +51,10 @@ module LiveChat
     # Reset all configuration options to defaults
     def reset
       self.adapter            = DEFAULT_ADAPTER
+      self.endpoint           = DEFAULT_ENDPOINT
       self.login              = nil
       self.api_key            = DEFAULT_API_KEY
       self.api_version        = DEFAULT_VERSION
-      self.format             = DEFAULT_FORMAT
       self.proxy              = DEFAULT_PROXY
       self.user_agent         = DEFAULT_USER_AGENT
       self.gateway            = DEFAULT_GATEWAY

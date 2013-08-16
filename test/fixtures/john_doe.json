@@ -1,0 +1,30 @@
+{
+    "login": "john.doe@mycompany.com",
+    "name": "John Doe",
+    "login_status": "accepting chats",
+    "permission": "owner",
+    "daily_summary": 1,
+    "job_title": "Support Agent",
+    "avatar": "livechat.s3.amazonaws.com/1011121/all/avatars/bdd8924fcbcdbddbeaf60c19b238b0b0.jpg",
+    "notifications": {
+        "new_visitor": 1,
+        "returning_visitor": 1,
+        "queued_visitor": 1,
+        "visitor_is_typing": 0,
+        "new_goal": 1
+    },
+    "max_chats_count": 6,
+    "groups": [
+        {
+            "id": 1,
+            "name": "Sales"
+        },
+        {
+            "id": 2,
+            "name": "Technical Support"
+        }
+    ],
+    "status": "accepting chats",
+    "last_logout": 1358427204,
+    "api_key": "6ed8580f2cc160ce98d16389a0ede2c0"
+}

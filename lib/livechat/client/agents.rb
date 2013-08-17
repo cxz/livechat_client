@@ -2,7 +2,7 @@ module LiveChat
   class Client
     module Agents
       # @livechat.agents                               - a list of agents
-      # @livechat.agents(john.doe@mycompany.com)                          - the agent with id=123
+      # @livechat.agents(john.doe@mycompany.com)       - the agent with id=123
       def agents(*args)
         AgentsCollection.new(self, *args)
       end

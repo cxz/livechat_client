@@ -1,0 +1,37 @@
+[
+    {
+        "id": 3151,
+        "group": 1,
+        "text": "Can I help you with anything else?",
+        "creation_date": 1358257181,
+        "created_by": "john.doe@mycompany.com",
+        "tags": [
+            "help",
+            "else"
+        ]
+    },
+    {
+        "id": 3161,
+        "group": 1,
+        "text": "What product are you interested in?",
+        "creation_date": 1358257229,
+        "created_by": "john.doe@mycompany.com",
+        "modification_date": 1358864338,
+        "modified_by": "jenny.doe@mycompany.com",
+        "tags": [
+            "product",
+            "interest"
+        ]
+    },
+    {
+        "id": 3171,
+        "group": 1,
+        "text": "I will transfer you to the agent responsible for this matter.",
+        "creation_date": 1358864376,
+        "created_by": "jenny.doe@mycompany.com",
+        "tags": [
+            "transfer",
+            "matter"
+        ]
+    }
+]

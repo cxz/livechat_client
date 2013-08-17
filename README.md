@@ -61,6 +61,37 @@ Canned responses
 -----------
 
 
+**List all canned responses**
+```ruby
+  @livechat.canned_responses
+```
+
+**Get a single canned response**
+```ruby
+  @livechat.canned_responses(3151)
+```
+
+**Create a new canned response**
+```ruby
+  @livechat.canned_responses.create do |r|
+    r[:text] = 'Have a great day, goodbye.'
+    r[:tags] = ['cu', 'bye']
+  end
+```
+
+**Update a canned response**
+```ruby
+  @livechat.canned_responses(3151).update do |r|
+    r[:tags] = ['bye']
+  end
+```
+
+**Remove a canned response**
+```ruby
+  @livechat.canned_responses(3151).delete
+```
+
+
 
 Chats
 -----------

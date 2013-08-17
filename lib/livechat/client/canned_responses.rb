@@ -2,8 +2,8 @@ module LiveChat
   class Client
     module CannedResponses
       # @livechat.canned_responses                     - a list of cannned responses
-      # @livechat.canned_responses(123)                          - the canned response with id=123
-      def canned_response(*args)
+      # @livechat.canned_responses(123)                - the canned response with id=123
+      def canned_responses(*args)
         CannedResponsesCollection.new(self, *args)
       end
     end

@@ -8,7 +8,6 @@ describe LiveChat::Client::Chats do
     @livechat = LiveChat::Client.new do |config|
       config.login = LOGIN
       config.api_key = API_KEY
-      config.debug = true
     end
 
     request_path = "https://#{LOGIN}:#{API_KEY}@#{ENDPOINT}/groups"

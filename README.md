@@ -251,6 +251,7 @@ end
 
 **Get status**
 ```ruby
+  @livechat.status(:group => 0)
 ```
 
 
@@ -259,14 +260,22 @@ end
 
 **List all visitors**
 ```ruby
+  @livechat.visitors.fetch
 ```
 
 **List only chatting visitors**
 ```ruby
+  @livechat.visitors.chatting
 ```
 
 **Add custom visitor details**
 ```ruby
+  @livechat.visitors('S1352647457.ac951bfe2e').add_details do |detail|
+    detail[:license_id] = '12345'
+    detail[:token] = '26132406c42c96ba61ed42689b70f719'
+    detail[:id] = 'my-app'
+    detail[:fields] = [{:name => 'Age', :value => 36}]
+  end
 ```
 
 

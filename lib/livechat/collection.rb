@@ -64,6 +64,9 @@ module LiveChat
           request.path = formatted_path(path, format)
           request.body = options unless options.empty?
         end
+        #if @client.debug
+        #  puts request
+        #end
       end
 
       response.body

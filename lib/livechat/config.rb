@@ -11,7 +11,8 @@ module LiveChat
       :format,
       :gateway,
       :proxy,
-      :user_agent
+      :user_agent,
+      :debug
     ].freeze
 
     attr_accessor *VALID_OPTIONS_KEYS
@@ -58,6 +59,7 @@ module LiveChat
       self.proxy              = DEFAULT_PROXY
       self.user_agent         = DEFAULT_USER_AGENT
       self.gateway            = DEFAULT_GATEWAY
+      self.debug              = false
       self
     end
   end

@@ -11,7 +11,7 @@ module LiveChat
     def connection(client)
       options = {
         :headers => {
-          :accept => "application/#{client.format}",
+          :accept => "application/json",
           :user_agent => client.user_agent,
           'X-API-Version' => client.api_version
         },
@@ -27,7 +27,7 @@ module LiveChat
         builder.use LiveChat::Response::RaiseHttp4xx
         builder.use Faraday::Response::Mashify
         builder.use Faraday::Response::ParseJson
-        #builder.use Faraday::Response::Logger
+        #builder.use Faraday::Response::Logger if client.debug
         # TODO: builder.use Faraday::Response::RaiseHttp5xx
         # finally
         builder.adapter @client.adapter

@@ -158,22 +158,33 @@ end
 
 **List all groups**
 ```ruby
+  @livechat.groups.fetch
 ```
 
 **Get a single group details**
 ```ruby
+  @livechat.groups(2).fetch
 ```
 
 **Create a new group**
 ```ruby
+  @livechat.groups.create do |goal|
+    group[:name] = 'Human Resources'
+    group[:agents] = ['jenny.doe@mycompany.com', 'john.doe@mycompany.com']
+  end
 ```
 
 **Update a group**
 ```ruby
+  @livechat.groups(3).update do |goal|
+    group[:name] = 'Quality Assurance'
+    group[:agents] = ['jane.doe@mycompany.com']
+  end
 ```
 
 **Remove a group**
 ```ruby
+  @livechat.groups(4).delete
 ```
 
 [Reports](http://developers.livechatinc.com/rest-api/#!reports)

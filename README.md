@@ -98,14 +98,17 @@ end
 
 **Get list of chats**
 ```ruby
+  @livechat.chats.fetch
 ```
 
 **Get single chat**
 ```ruby
+  @livechat.chats('MH022RD0K5').fetch
 ```
 
 **Send chat transcript to e-mail**
 ```ruby
+  @livechat.chats('MH022RD0K5').send_transcript(:to => 'john.doe@mycompany.com')
 ```
 
 
@@ -115,26 +118,37 @@ end
 
 **List all goals**
 ```ruby
+  @livechat.goals.fetch
 ```
 
 **Get a single goal details**
 ```ruby
+  @livechat.goals(1181).fetch
 ```
 
 **Mark goal as successful**
 ```ruby
+  @livechat.goals(1181).mark_as_successful(:visitor_id => 1)
 ```
 
 **Add a new goal**
 ```ruby
+  @livechat.goals.create do |goal|
+    goal[:name] = 'new goal'
+    goal[:type] = 'url'
+  end
 ```
 
 **Update a goal**
 ```ruby
+  @livechat.goals(2231).update do |goal|
+    goal[:name] = 'updated goal'
+  end
 ```
 
 **Remove a goal**
 ```ruby
+  @livechat.goals(2231).delete
 ```
 
 

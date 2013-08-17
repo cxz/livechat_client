@@ -57,7 +57,7 @@ end
 ```
 
 
-Canned responses
+[Canned responses](http://developers.livechatinc.com/rest-api/#!canned-responses)
 -----------
 
 
@@ -93,20 +93,74 @@ Canned responses
 
 
 
-Chats
+[Chats](http://developers.livechatinc.com/rest-api/#!chats)
+-----------
+
+**Get list of chats**
+```ruby
+```
+
+**Get single chat**
+```ruby
+```
+
+**Send chat transcript to e-mail**
+```ruby
+```
+
+
+[Goals](http://developers.livechatinc.com/rest-api/#!goals)
 -----------
 
 
+**List all goals**
+```ruby
+```
 
-Goals
+**Get a single goal details**
+```ruby
+```
+
+**Mark goal as successful**
+```ruby
+```
+
+**Add a new goal**
+```ruby
+```
+
+**Update a goal**
+```ruby
+```
+
+**Remove a goal**
+```ruby
+```
+
+
+[Groups](http://developers.livechatinc.com/rest-api/#!groups)
 -----------
 
 
+**List all groups**
+```ruby
+```
 
+**Get a single group details**
+```ruby
+```
 
-Groups
------------
+**Create a new group**
+```ruby
+```
 
+**Update a group**
+```ruby
+```
+
+**Remove a group**
+```ruby
+```
 
 [Reports](http://developers.livechatinc.com/rest-api/#!reports)
 -----------
@@ -167,13 +221,28 @@ Groups
 ```
 
 
-Status
+[Status](http://developers.livechatinc.com/rest-api/#!status)
 -----------
 
+**Get status**
+```ruby
+```
 
 
-Visitors
+[Visitors](http://developers.livechatinc.com/rest-api/#!visitors)
 -----------
+
+**List all visitors**
+```ruby
+```
+
+**List only chatting visitors**
+```ruby
+```
+
+**Add custom visitor details**
+```ruby
+```
 
 
 Contributing

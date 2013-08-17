@@ -19,11 +19,11 @@ describe LiveChat::Client::CannedResponses do
   end
 
   it "lists all canned responses" do
-    @livechat.canned_responses
+    @livechat.canned_responses.fetch
   end
 
   it "gets a single canned response" do
-    @livechat.canned_responses(0)
+    @livechat.canned_responses(0).fetch
   end
 
   it "creates a new canned response" do

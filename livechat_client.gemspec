@@ -13,7 +13,7 @@ Gem::Specification.new do |g|
   g.homepage = "https://github.com/cxz/livechat_client"
   g.summary = %q|LiveChat REST API Client|
   g.description = %q|Ruby wrapper for the REST API at http://developers.livechatinc.com/rest-api/|
-  g.license = %q|MIT License|
+  g.license = %q|MIT|
 
   g.required_ruby_version = ">= 1.8.7"
   g.required_rubygems_version = ">= 1.3.6"

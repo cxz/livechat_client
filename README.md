@@ -61,7 +61,7 @@ end
 ```ruby
 @livechat.agents(@jane_id).update do |a|
   a[:job_title] = 'Tester'
-  a[:status] = 'not accepting chats
+  a[:status] = 'not accepting chats'
 end
 ```
 

@@ -1,7 +1,7 @@
 require "livechat/version"
-require "livechat/config"
-require "livechat/api"
-require "livechat/client"
+#require "livechat/config"
+#require "livechat/api"
+#require "livechat/client"
 
 require 'net/http'
 require 'net/https'

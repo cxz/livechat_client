@@ -32,8 +32,12 @@ module LiveChat
       %w(agents canned_responses chats goals groups reports status visitors).each do |r|
         define_method(r.to_sym) do |*args|
           klass = LiveChat::REST.const_get r.capitalize
-          id = args.length > 0 ? args[0] : nil
-          klass.new("/#{r}", self, id)
+          n = klass.new("/#{r}", self)
+          if args.length > 0
+            n.get(args[0])
+          else 
+            n
+          end
         end
       end
 

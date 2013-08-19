@@ -19,7 +19,7 @@ Gem::Specification.new do |g|
   g.required_rubygems_version = ">= 1.3.6"
 
   g.add_development_dependency "yajl-ruby"
-  g.add_development_dependency "nokogiri"
+  #g.add_development_dependency "nokogiri"
   g.add_development_dependency "rake"
   g.add_development_dependency "yard"
   g.add_development_dependency "minitest"
@@ -27,8 +27,8 @@ Gem::Specification.new do |g|
   g.add_development_dependency "webmock", "~> 1.9.0"
 
   g.add_runtime_dependency "hashie", ">= 1.2"
-  g.add_runtime_dependency "faraday", ">= 0.8.0"
-  g.add_runtime_dependency "faraday_middleware", "0.8.7"
+  #g.add_runtime_dependency "faraday", ">= 0.8.0"
+  #g.add_runtime_dependency "faraday_middleware", "0.8.7"
   g.add_runtime_dependency "multi_json"
   #g.add_runtime_dependency "patron"
 

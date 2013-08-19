@@ -3,12 +3,11 @@ module LiveChat
     class ListResource
       include Utils
 
-      def initialize(path, client, id=nil)
+      def initialize(path, client)
         @path, @client = path, client
         resource_name = self.class.name.split('::')[-1]
         @instance_class = LiveChat::REST.const_get resource_name.chop
         @list_key, @instance_id_key = detwilify(resource_name), 'id'
-        get(id) if id
       end
 
       def inspect # :nodoc:

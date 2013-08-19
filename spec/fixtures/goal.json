@@ -1,0 +1,8 @@
+{
+    "id": 1181,
+    "name": "nike shoes variable",
+    "active": 1,
+    "type": "custom_variable",
+    "custom_variable_name": "nike_shoes",
+    "custom_variable_value": "true"
+}

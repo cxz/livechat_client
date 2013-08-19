@@ -75,7 +75,7 @@ module LiveChat
       def set_up_properties_from(hash)
         eigenclass = class << self; self; end
         hash.each do |p,v|
-          property = detwilify p
+          property = unrestify p
           unless ['client', 'updated'].include? property
             eigenclass.send :define_method, property.to_sym, &lambda {v}
           end
@@ -85,7 +85,7 @@ module LiveChat
 
       def resource(*resources)
         resources.each do |r|
-          resource = twilify r
+          resource = restify r
           relative_path = resource
           path = "#{@path}/#{relative_path}"
           resource_class = LiveChat::REST.const_get resource

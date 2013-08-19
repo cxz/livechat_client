@@ -7,7 +7,7 @@ module LiveChat
         @path, @client = path, client
         resource_name = self.class.name.split('::')[-1]
         @instance_class = LiveChat::REST.const_get resource_name.chop
-        @list_key, @instance_id_key = detwilify(resource_name), 'id'
+        @list_key, @instance_id_key = unrestify(resource_name), 'id'
       end
 
       def inspect # :nodoc:

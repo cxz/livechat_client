@@ -21,7 +21,3 @@ require 'livechat/rest/reports'
 require 'livechat/rest/status'
 require 'livechat/rest/visitors'
 require 'livechat/rest/client'
-
-#module LiveChat
-#  extend Config
-#end

@@ -1,11 +1,31 @@
+#This file is based on code from https://github.com/twilio/twilio-ruby
+#
+#Copyright (c) 2010 Andrew Benton.
+#
+#  Permission is hereby granted, free of charge, to any person obtaining a copy
+#of this software and associated documentation files (the "Software"), to deal
+#in the Software without restriction, including without limitation the rights
+#to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+#copies of the Software, and to permit persons to whom the Software is
+#furnished to do so, subject to the following conditions:
+#
+#  The above copyright notice and this permission notice shall be included in
+#all copies or substantial portions of the Software.
+#
+#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+#THE SOFTWARE.
+  
+
 module LiveChat
   module REST
     ##
     # A class to wrap an instance resource (like a call or application) within
-    # the LiveChat API. All other instance resource classes within this library
-    # inherit from this class. You shouldn't need to instantiate this class
-    # directly. But reviewing the available methods is informative since they
-    # are rarely overridden in the inheriting class.
+    # the LiveChat API. 
     class InstanceResource
       include Utils
 
@@ -29,10 +49,7 @@ module LiveChat
       ##
       # Update the properties of this instance resource using the key/value
       # pairs in +params+. This makes an HTTP POST request to <tt>@path</tt>
-      # to handle the update. For example, to update the +VoiceUrl+ of a LiveChat
-      # Application you could write:
-      #
-      #   @app.update :voice_url => 'http://my.other.app.com/handle_voice'
+      # to handle the update. 
       #
       # After returning, the object will contain the most recent state of the
       # instance resource, including the newly updated properties.
@@ -77,9 +94,7 @@ module LiveChat
         eigenclass = class << self; self; end
         hash.each do |p,v|
           property = unrestify p
-          unless ['client', 'updated'].include? property
-            eigenclass.send :define_method, property.to_sym, &lambda {v}
-          end
+          eigenclass.send :define_method, property.to_sym, &lambda {v}
         end
         @updated = !hash.keys.empty?
       end

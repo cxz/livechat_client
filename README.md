@@ -1,6 +1,25 @@
 LiveChat API Ruby Client
 =======================
 
+## Install
+
+Via rubygems.org:
+
+```
+$ gem install livechat_client
+```
+
+To build and install the development branch yourself from the latest source:
+
+```
+$ git clone git@github.com:cxz/livechat_client.git
+$ cd livechat_client
+$ git checkout -b develop
+$ rake gem
+$ gem install pkg/livechat-client-{version}
+```
+
+
 Connection
 ----------
 
@@ -287,7 +306,6 @@ Ways you can help:
 
   * report bugs
   * writing/fixing documentation
-  * writing specifications (provide suggestions for API v2)
   * writing code (refactoring, strengthening areas that are weak, catching typos)
 
 Note on Patches/Pull Requests
@@ -300,7 +318,7 @@ Note on Patches/Pull Requests
 
 MIT License
 -----------
-Copyright (c) 2013 LiveChat Inc
+Copyright (c) 2013 Alexandre Maia
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 

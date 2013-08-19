@@ -1,28 +1,13 @@
-include Rake::DSL
+require 'rubygems'
+require 'rubygems/package_task'
+require 'rspec/core/rake_task'
 
-require "bundler"
-Bundler::GemHelper.install_tasks
+spec = eval(File.read('livechat_client.gemspec'))
 
-desc "Run tests"
-task :test do
-  system "ruby -Ilib -Itest -e 'ARGV.each { |f| load f }' test/livechat/**/*_test.rb"
+Gem::PackageTask.new(spec) do |p|
+    p.gem_spec = spec
 end
 
-task :default => :test
+RSpec::Core::RakeTask.new
+task :default => :spec
 
-desc "Run irb with livechat client lib loaded"
-task :console do
-  sh "irb -I lib -r ./lib/livechat.rb"
-end
-
-namespace :doc do
-  require "yard"
-  YARD::Rake::YardocTask.new do |t|
-    t.files = ["lib/**/*.rb"]
-    t.options = [
-      "--protected",
-      "--output-dir", "doc/yard",
-      "--markup", "markdown"
-    ]
-  end
-end

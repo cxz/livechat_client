@@ -7,7 +7,10 @@ describe LiveChat::REST::Visitors do
   before do
     @livechat = create_client
 
-    stub_rest 'visitors'
+    base = "#{ENDPOINT}/visitors"
+    stub_request(:post, /#{base}/)
+    stub_request(:get, "#{base}").to_return(:body => fixture('visitors.json'))
+
   end
 
   after do
@@ -16,7 +19,9 @@ describe LiveChat::REST::Visitors do
 
 
   it "lists all visitors" do
-    @livechat.visitors.fetch
+    visitors = @livechat.visitors
+    expect(visitors.list.length).to be(2)
+
   end
 
   it "lists only chatting visitors" do

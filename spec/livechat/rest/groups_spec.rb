@@ -1,17 +1,13 @@
-require "test_helper"
+require "spec_helper"
 
 include WebMock::API
 
 
-describe LiveChat::Client::Chats do
+describe LiveChat::REST::Groups do
   before do
-    @livechat = LiveChat::Client.new do |config|
-      config.login = LOGIN
-      config.api_key = API_KEY
-    end
+    @livechat = create_client
 
-    request_path = "https://#{LOGIN}:#{API_KEY}@#{ENDPOINT}/groups"
-    stub_request(:any, /#{request_path}.*/)
+    stub_rest 'groups'
   end
 
   after do
@@ -20,11 +16,11 @@ describe LiveChat::Client::Chats do
 
 
   it "lists all groups" do
-    @livechat.groups.fetch
+    @livechat.groups
   end
 
   it "gets a single group details" do
-    @livechat.groups(2).fetch
+    @livechat.groups(2)
   end
 
   it "creates a new group" do

@@ -1,17 +1,13 @@
-require "test_helper"
+require "spec_helper"
 
 include WebMock::API
 
 
-describe LiveChat::Client::Visitors do
+describe LiveChat::REST::Visitors do
   before do
-    @livechat = LiveChat::Client.new do |config|
-      config.login = LOGIN
-      config.api_key = API_KEY
-    end
+    @livechat = create_client
 
-    request_path = "https://#{LOGIN}:#{API_KEY}@#{ENDPOINT}/visitors"
-    stub_request(:any, /#{request_path}.*/)
+    stub_rest 'visitors'
   end
 
   after do

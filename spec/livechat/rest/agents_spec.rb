@@ -6,19 +6,13 @@ include WebMock::API
 describe LiveChat::REST::Agents do
 
   before do
-    @livechat = LiveChat::REST::Client.new do |config|
-      config[:login] = LOGIN
-      config[:api_key] = API_KEY
-    end
+    @livechat = create_client
 
     @john_id = 'john.doe@mycompany.com'
     @jane_id = 'jane.doe@mycompany.com'
     @alice_id = 'alice@mycompany.com'
 
-    @agents_base = "#{ENDPOINT}/agents"
-    stub_request(:delete, /#{@agents_base}/)
-    stub_request(:any, /.*/).to_return(:body => fixture('john_doe.json'))
-    stub_request(:get, "#{@agents_base}").to_return(:body => fixture('agents.json'))
+    stub_rest 'agents'
 
   end
 

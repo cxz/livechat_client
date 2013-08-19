@@ -1,15 +1,6 @@
 module LiveChat
-  class Client
-    module Reports
-      def reports(*args)
-        ReportsCollection.new(self, *args)
-      end
-    end
-
-    class ReportsCollection < Collection
-      def initialize(client, *args)
-        super(client, :report, *args)
-      end
+  module REST
+    class Reports < ListResource
 
       #http://developers.livechatinc.com/rest-api/#get-dashboard-data
       def dashboard(*arg)
@@ -20,21 +11,18 @@ module LiveChat
           dashboard_group arg[:group]
 
         else
-          @query[:path] += '/dashboards'
-          fetch true
+          @client.get "#{@path}/dashboards"
         end
       end
 
       #http://developers.livechatinc.com/rest-api/#get-dashboard-data-for-agent
       def dashboard_agent(login)
-        @query[:path] += "/agent/#{login}"
-        fetch true
+        @client.get "#{@path}/agent/#{login}"
       end
 
       #http://developers.livechatinc.com/rest-api/#get-dashboard-data-for-group
       def dashboard_group(group_id)
-        @query[:path] += "/group/#{group_id}"
-        fetch true
+        @client.get "#{@path}/group/#{group_id}"
       end
 
       #http://developers.livechatinc.com/rest-api/#get-chats-report
@@ -45,9 +33,7 @@ module LiveChat
       # agent – agent's login, not set by default, return statistics for the specified agent.
       # group_by – defaults to day (or hour when date_from equals date_to), can be set to month or hour.
       def chats(*args)
-        @query[:path] += '/chats'
-        @query.merge! Hash[*args]
-        fetch true
+        @client.get "#{@path}/chats", Hash[*args]
       end
 
       #http://developers.livechatinc.com/rest-api/#get-ratings-report
@@ -58,9 +44,7 @@ module LiveChat
       # agent – agent's login, not set by default, return statistics for the specified agent.
       # group_by – defaults to day (or hour when date_from equals date_to), can be set to month or hour.
       def ratings(*args)
-        @query[:path] += '/ratings'
-        @query.merge! Hash[*args]
-        fetch true
+        @client.get "#{@path}/ratings", Hash[*args]
       end
 
       #http://developers.livechatinc.com/rest-api/#get-ratings-ranking
@@ -69,9 +53,7 @@ module LiveChat
       # date_to – YYYY-MM-DD, defaults to today.
       # group – id of the group, not set by default, returns statistics for the specified group.
       def ratings_ranking(*args)
-        @query[:path] += '/ratings/ranking'
-        @query.merge! Hash[*args]
-        fetch true
+        @client.get "#{@path}/ratings/ranking", Hash[*args]
       end
 
       #http://developers.livechatinc.com/rest-api/#get-queued-visitors-report
@@ -81,9 +63,7 @@ module LiveChat
       # group – id of the group, not set by default, returns statistics for the specified group.
       # group_by – defaults to day (or hour when date_from equals date_to), can be set to month or hour.
       def queued_visitors(*args)
-        @query[:path] += '/queued_visitors'
-        @query.merge! Hash[*args]
-        fetch true
+        @client.get "#{@path}/queued_visitors", Hash[*args]
       end
 
       #http://developers.livechatinc.com/rest-api/#get-queue-waiting-times-report
@@ -93,9 +73,7 @@ module LiveChat
       # group – id of the group, not set by default, returns statistics for the specified group.
       # group_by – defaults to day (or hour when date_from equals date_to), can be set to month or hour.
       def queued_visitors_waiting_times(*args)
-        @query[:path] += '/queued_visitors_waiting_times'
-        @query.merge! Hash[*args]
-        fetch true
+        @client.get "#{@path}/queued_visitors_waiting_times", Hash[*args]
       end
 
       #http://developers.livechatinc.com/rest-api/#get-availability-report
@@ -104,10 +82,8 @@ module LiveChat
       # date_to – YYYY-MM-DD, defaults to today.
       # group – id of the group, not set by default, returns statistics for the specified group.
       # agent – agent's login, not set by default, return statistics for the specified agent.
-      def availability
-        @query[:path] += '/availability'
-        @query.merge! Hash[*args]
-        fetch true
+      def availability(*args)
+        @client.get "#{@path}/availability", Hash[*args]
       end
 
       #http://developers.livechatinc.com/rest-api/#get-chatting-time-report
@@ -116,10 +92,8 @@ module LiveChat
       # date_to – YYYY-MM-DD, defaults to today.
       # group – id of the group, not set by default, returns statistics for the specified group.
       # agent – agent's login, not set by default, returns statistics for the specified agent
-      def chatting_time
-        @query[:path] += '/chatting_time'
-        @query.merge! Hash[*args]
-        fetch true
+      def chatting_time(*args)
+        @client.get "#{@path}/chatting_time", Hash[*args]
       end
 
       #http://developers.livechatinc.com/rest-api/#get-goals-report
@@ -131,12 +105,12 @@ module LiveChat
       #  agent – agent's login, not set by default, return statistics for the specified agent.
       #  group_by – defaults to day (or hour when date_from equals date_to), can be set to month or hour.
       def goals(*args)
-        @query[:path] += '/goals'
-        @query.merge! Hash[*args]
-        fetch true
+        @client.get "#{@path}/goals", Hash[*args]
       end
 
     end
 
+    class Report < InstanceResource
+    end
   end
 end

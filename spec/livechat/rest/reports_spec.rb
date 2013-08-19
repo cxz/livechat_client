@@ -1,16 +1,13 @@
-require "test_helper"
+require "spec_helper"
 
 include WebMock::API
 
 
-describe LiveChat::Client::Reports do
+describe LiveChat::REST::Reports do
   before do
-    @livechat = LiveChat::Client.new do |config|
-      config.login = LOGIN
-      config.api_key = API_KEY
-    end
-
-    stub_request(:get, /https:\/\/#{LOGIN}:#{API_KEY}@#{ENDPOINT}\/reports.*/).to_return(:body => {})
+    @livechat = create_client
+    @reports_base = "#{ENDPOINT}/reports"
+    stub_request(:get, /#{@reports_base}/).to_return(:body => {})
   end
 
   after do

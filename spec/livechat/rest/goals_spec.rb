@@ -1,17 +1,13 @@
-require "test_helper"
+require "spec_helper"
 
 include WebMock::API
 
 
-describe LiveChat::Client::Chats do
+describe LiveChat::REST::Goals do
   before do
-    @livechat = LiveChat::Client.new do |config|
-      config.login = LOGIN
-      config.api_key = API_KEY
-    end
+    @livechat = create_client
 
-    request_path = "https://#{LOGIN}:#{API_KEY}@#{ENDPOINT}/goals"
-    stub_request(:any, /#{request_path}.*/)
+    stub_rest 'goals'
   end
 
   after do
@@ -20,11 +16,11 @@ describe LiveChat::Client::Chats do
 
 
   it "lists all goals" do
-    @livechat.goals.fetch
+    @livechat.goals
   end
 
   it "gets a single goal details" do
-    @livechat.goals(1181).fetch
+    @livechat.goals(1181)
   end
 
   it "marks goal as successful" do

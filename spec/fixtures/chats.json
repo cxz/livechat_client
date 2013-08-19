@@ -1,0 +1,135 @@
+{
+    "chats": [
+        {
+            "type": "chat",
+            "id": "MH022RD0K5",
+            "visitor_name": "Mary Brown",
+            "visitor_id": "S1355415390.49b8940793",
+            "agents": [
+                {
+                    "display_name": "John Doe",
+                    "email": "john.doe@mycompany.com"
+                }
+            ],
+            "supervisors": [
+                {
+                    "display_name": "Jane Doe",
+                    "email": "jane.doe@mycompany.com"
+                }
+            ],
+            "rate": "not_rated",
+            "duration": 1456, // in seconds
+            "group": [
+                0
+            ],
+            "started": "Wed, 01/23/13 11:40:53 am",
+            "prechat_survey": [
+                {
+                    "key": "Name:",
+                    "value": "",
+                    "id": "13589376348060238"
+                },
+                {
+                    "key": "E-mail:",
+                    "value": "",
+                    "id": "135893763480606511"
+                }
+            ],
+            "postchat_survey": [
+                {
+                    "key": "How would you rate the quality of support?",
+                    "value": "Good",
+                    "id": "137164167769201638"
+                }
+            ],
+            "custom_variables": [
+                {
+                    "key": "customer_login",
+                    "value": "mary_brown"
+                }
+            ],
+            "integration_variables": [
+                {
+                    "key": "facebook.id",
+                    "value": "123456789"
+                },
+                {
+                    "key": "facebook.name",
+                    "value": "Mary Brown"
+                },
+                {
+                    "key": "facebook.first_name",
+                    "value": "Mary"
+                },
+                {
+                    "key": "facebook.last_name",
+                    "value": "Brown"
+                },
+                {
+                    "key": "facebook.gender",
+                    "value": "female"
+                },
+                {
+                    "key": "facebook.locale",
+                    "value": "en_US"
+                },
+                {
+                    "key": "facebook.link",
+                    "value": "http://www.facebook.com/mary.brown"
+                },
+                {
+                    "key": "facebook.username",
+                    "value": "mary.brown"
+                },
+                {
+                    "key": "facebook.email",
+                    "value": "mary.brown@email.com"
+                }
+            ],
+            "goals": [
+                {
+                    "id": 71,
+                    "name": "goal_name"
+                }
+            ],
+            "messages": [
+                {
+                    "author_name": "John Doe",
+                    "text": "Hello",
+                    "date": "Wed, 01/23/13 11:40:53 am",
+                    "timestamp": 1358937653,
+                    "user_type": "agent",
+                    "agent_id": "john.doe@mycompany.com"
+                },
+                {
+                    "author_name": "Mary Brown",
+                    "text": "How are you?",
+                    "date": "Wed, 01/23/13 11:41:01 am",
+                    "timestamp": 1358937661,
+                    "user_type": "visitor"
+                },
+                {
+                    "author_name": "John Doe",
+                    "text": "Thanks, fine :)",
+                    "date": "Wed, 01/23/13 11:41:05 am",
+                    "timestamp": 1358937665,
+                    "user_type": "agent",
+                    "agent_id": "john.doe@mycompany.com"
+                },
+                {
+                    "author_name": "Jane Doe",
+                    "text": "Message from supervisor.",
+                    "date": "Wed, 01/23/13 11:57:13 am",
+                    "timestamp": 1358938633,
+                    "user_type": "supervisor",
+                    "agent_id": "jane.doe@mycompany.com"
+                }
+            ],
+            "started_timestamp": 1358937653,
+            "ended_timestamp": 1358939109,
+            "ended": "Wed, 01/23/13 12:05:09 pm"
+        }
+],
+"total": 1,
+"pages": 1
+}

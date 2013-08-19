@@ -31,7 +31,7 @@ module LiveChat
 
       %w(agents canned_responses chats goals groups reports status visitors).each do |r|
         define_method(r.to_sym) do |*args|
-          klass = LiveChat::REST.const_get r.capitalize
+          klass = LiveChat::REST.const_get restify(r.capitalize)
           n = klass.new("/#{r}", self)
           if args.length > 0
             n.get(args[0])
@@ -67,10 +67,13 @@ module LiveChat
       [:get, :put, :post, :delete].each do |method|
         method_class = Net::HTTP.const_get method.to_s.capitalize
         define_method method do |path, *args|
-          params = restify args[0]; params = {} if params.empty?
+          params ||= {}
           unless args[1] # build the full path unless already given
             path = "#{path}"
-            path << "?#{url_encode(params)}" if method == :get && !params.empty?
+            if method == :get
+              params = restify args[0]
+              path << "?#{url_encode(params)}" if method == :get && !params.empty?
+            end
           end
           request = method_class.new path, HTTP_HEADERS
           request.basic_auth @login, @api_key

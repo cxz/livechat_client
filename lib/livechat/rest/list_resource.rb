@@ -81,8 +81,7 @@ module LiveChat
         raise "Can't create a resource without a REST Client" unless @client
         yield params if block_given?
         response = @client.post @path, params
-        @instance_class.new "#{@path}/#{response[@instance_id_key]}", @client,
-          response
+        @instance_class.new "#{@path}/#{response[@instance_id_key]}", @client, response
       end
 
       def each

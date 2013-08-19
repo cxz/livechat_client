@@ -1,17 +1,13 @@
-require "test_helper"
+require "spec_helper"
 
 include WebMock::API
 
 
-describe LiveChat::Client::CannedResponses do
+describe LiveChat::REST::CannedResponses do
   before do
-    @livechat = LiveChat::Client.new do |config|
-      config.login = LOGIN
-      config.api_key = API_KEY
-    end
+    @livechat = create_client
 
-    request_path = "https://#{LOGIN}:#{API_KEY}@#{ENDPOINT}/canned_responses"
-    stub_request(:any, /#{request_path}.*/)
+    stub_rest 'canned_responses'
   end
 
   after do
@@ -19,11 +15,11 @@ describe LiveChat::Client::CannedResponses do
   end
 
   it "lists all canned responses" do
-    @livechat.canned_responses.fetch
+    @livechat.canned_responses
   end
 
   it "gets a single canned response" do
-    @livechat.canned_responses(0).fetch
+    @livechat.canned_responses(0)
   end
 
   it "creates a new canned response" do

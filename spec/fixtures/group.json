@@ -1,0 +1,10 @@
+{
+    "id": 2,
+    "name": "Sales",
+    "language": "en",
+    "agents": [
+        "john.doe@mycompany.com",
+        "jenny.doe@mycompany.com"
+    ],
+    "status": "accepting chats"
+}

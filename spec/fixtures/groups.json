@@ -1,0 +1,32 @@
+[
+    {
+        "id": 0,
+        "name": "All operators",
+        "language": "en"
+    },
+    {
+        "id": 1,
+        "name": "Invoicing",
+        "language": "en",
+        "agents": [
+            "jane.doe@mycompany.com"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Sales",
+        "language": "en",
+        "agents": [
+            "john.doe@mycompany.com",
+            "jenny.doe@mycompany.com"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Technical Support",
+        "language": "en",
+        "agents": [
+            "john.doe@mycompany.com"
+        ]
+    }
+]

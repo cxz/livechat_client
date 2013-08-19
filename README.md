@@ -1,6 +1,25 @@
 LiveChat API Ruby Client
 =======================
 
+## Install
+
+Via rubygems.org:
+
+```
+$ gem install livechat_client
+```
+
+To build and install the development branch yourself from the latest source:
+
+```
+$ git clone git@github.com:cxz/livechat_client.git
+$ cd livechat_client
+$ git checkout -b develop
+$ rake gem
+$ gem install pkg/livechat-client-{version}
+```
+
+
 Connection
 ----------
 
@@ -21,7 +40,7 @@ end
 **List all agents**
 
 ```ruby
-@livechat.agents.fetch                    # all agents
+@livechat.agents                          # all agents
 @livechat.agents.each {|user| ..code.. }  # iterate over requested agents
 ```
 
@@ -42,7 +61,7 @@ end
 ```ruby
 @livechat.agents(@jane_id).update do |a|
   a[:job_title] = 'Tester'
-  a[:status] = 'not accepting chats'
+  a[:status] = 'not accepting chats
 end
 ```
 
@@ -98,12 +117,12 @@ end
 
 **Get list of chats**
 ```ruby
-  @livechat.chats.fetch
+  @livechat.chats
 ```
 
 **Get single chat**
 ```ruby
-  @livechat.chats('MH022RD0K5').fetch
+  @livechat.chats('MH022RD0K5')
 ```
 
 **Send chat transcript to e-mail**
@@ -118,12 +137,12 @@ end
 
 **List all goals**
 ```ruby
-  @livechat.goals.fetch
+  @livechat.goals
 ```
 
 **Get a single goal details**
 ```ruby
-  @livechat.goals(1181).fetch
+  @livechat.goals(1181)
 ```
 
 **Mark goal as successful**
@@ -158,12 +177,12 @@ end
 
 **List all groups**
 ```ruby
-  @livechat.groups.fetch
+  @livechat.groups
 ```
 
 **Get a single group details**
 ```ruby
-  @livechat.groups(2).fetch
+  @livechat.groups(2)
 ```
 
 **Create a new group**
@@ -260,7 +279,7 @@ end
 
 **List all visitors**
 ```ruby
-  @livechat.visitors.fetch
+  @livechat.visitors
 ```
 
 **List only chatting visitors**
@@ -287,7 +306,6 @@ Ways you can help:
 
   * report bugs
   * writing/fixing documentation
-  * writing specifications (provide suggestions for API v2)
   * writing code (refactoring, strengthening areas that are weak, catching typos)
 
 Note on Patches/Pull Requests
@@ -300,7 +318,7 @@ Note on Patches/Pull Requests
 
 MIT License
 -----------
-Copyright (c) 2013 LiveChat Inc
+Copyright (c) 2013 Alexandre Maia
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 

@@ -16,6 +16,7 @@ require 'livechat/rest/utils'
 require 'livechat/rest/list_resource'
 require 'livechat/rest/instance_resource'
 require 'livechat/rest/agents'
+require 'livechat/rest/visitors'
 require 'livechat/rest/client'
 
 #module LiveChat

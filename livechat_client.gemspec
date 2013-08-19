@@ -21,6 +21,7 @@ Gem::Specification.new do |g|
   g.add_development_dependency "yajl-ruby"
   #g.add_development_dependency "nokogiri"
   g.add_development_dependency "rake"
+  g.add_development_dependency "rspec"
   g.add_development_dependency "yard"
   g.add_development_dependency "minitest"
   g.add_development_dependency "pry"

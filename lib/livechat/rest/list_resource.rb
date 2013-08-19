@@ -7,7 +7,7 @@ module LiveChat
         @path, @client = path, client
         resource_name = self.class.name.split('::')[-1]
         @instance_class = LiveChat::REST.const_get resource_name.chop
-        @list_key, @instance_id_key = unrestify(resource_name), 'id'
+        @instance_id_key = 'id'
       end
 
       def inspect # :nodoc:
@@ -27,25 +27,25 @@ module LiveChat
       def list(params={}, full_path=false)
         raise "Can't get a resource list without a REST Client" unless @client
         response = @client.get @path, params, full_path
-        resources = response[@list_key]
+        resources = @list_key ? response[@list_key]: response
         path = full_path ? @path.split('.')[0] : @path
         resource_list = resources.map do |resource|
           @instance_class.new "#{path}/#{resource[@instance_id_key]}", @client,
             resource
         end
         # set the +total+ and +next_page+ properties on the array
-        client, list_class = @client, self.class
-        resource_list.instance_eval do
-          eigenclass = class << self; self; end
-          eigenclass.send :define_method, :total, &lambda {response['total']}
-          eigenclass.send :define_method, :next_page, &lambda {
-            if response['next_page_uri']
-              list_class.new(response['next_page_uri'], client).list({}, true)
-            else
-              []
-            end
-          }
-        end
+        #client, list_class = @client, self.class
+        #resource_list.instance_eval do
+          #eigenclass = class << self; self; end
+          #eigenclass.send :define_method, :total, &lambda {response['total']}
+          #eigenclass.send :define_method, :next_page, &lambda {
+          #  if response['next_page_uri']
+          #    list_class.new(response['next_page_uri'], client).list({}, true)
+          #  else
+          #    []
+          #  end
+          #}
+        #end
         resource_list
       end
 
@@ -56,10 +56,10 @@ module LiveChat
       # obtaining the total. Don't use this if you are planning to
       # call #list anyway, since the array returned from #list will have a
       # +total+ attribute as well.
-      def total
-        raise "Can't get a resource total without a REST Client" unless @client
-        @client.get(@path, :page_size => 1)['total']
-      end
+      #def total
+      #  raise "Can't get a resource total without a REST Client" unless @client
+      #  @client.get(@path, :page_size => 1)['total']
+      #end
 
       ##
       # Return an empty instance resource object with the proper path. Note that
@@ -79,10 +79,16 @@ module LiveChat
       # POST request to <tt>@path</tt> with the given params
       def create(params={})
         raise "Can't create a resource without a REST Client" unless @client
+        yield params if block_given?
         response = @client.post @path, params
         @instance_class.new "#{@path}/#{response[@instance_id_key]}", @client,
           response
       end
+
+      def each
+        list.each { |result| yield result }
+      end
+
     end
   end
 end

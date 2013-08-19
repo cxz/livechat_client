@@ -21,7 +21,7 @@ end
 **List all agents**
 
 ```ruby
-@livechat.agents.fetch                    # all agents
+@livechat.agents                          # all agents
 @livechat.agents.each {|user| ..code.. }  # iterate over requested agents
 ```
 
@@ -42,7 +42,7 @@ end
 ```ruby
 @livechat.agents(@jane_id).update do |a|
   a[:job_title] = 'Tester'
-  a[:status] = 'not accepting chats'
+  a[:status] = 'not accepting chats
 end
 ```
 
@@ -98,12 +98,12 @@ end
 
 **Get list of chats**
 ```ruby
-  @livechat.chats.fetch
+  @livechat.chats
 ```
 
 **Get single chat**
 ```ruby
-  @livechat.chats('MH022RD0K5').fetch
+  @livechat.chats('MH022RD0K5')
 ```
 
 **Send chat transcript to e-mail**
@@ -118,12 +118,12 @@ end
 
 **List all goals**
 ```ruby
-  @livechat.goals.fetch
+  @livechat.goals
 ```
 
 **Get a single goal details**
 ```ruby
-  @livechat.goals(1181).fetch
+  @livechat.goals(1181)
 ```
 
 **Mark goal as successful**
@@ -158,12 +158,12 @@ end
 
 **List all groups**
 ```ruby
-  @livechat.groups.fetch
+  @livechat.groups
 ```
 
 **Get a single group details**
 ```ruby
-  @livechat.groups(2).fetch
+  @livechat.groups(2)
 ```
 
 **Create a new group**
@@ -260,7 +260,7 @@ end
 
 **List all visitors**
 ```ruby
-  @livechat.visitors.fetch
+  @livechat.visitors
 ```
 
 **List only chatting visitors**

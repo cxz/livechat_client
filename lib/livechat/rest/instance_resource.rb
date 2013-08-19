@@ -38,7 +38,8 @@ module LiveChat
       # instance resource, including the newly updated properties.
       def update(params = {})
         raise "Can't update a resource without a REST Client" unless @client
-        set_up_properties_from(@client.post(@path, params))
+        yield params if block_given?
+        set_up_properties_from(@client.put(@path, params))
         self
       end
 

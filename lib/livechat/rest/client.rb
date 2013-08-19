@@ -46,9 +46,12 @@ module LiveChat
       # +login+ and +api_key+ are required and used to generate the
       # HTTP basic auth header in each request.
       #
-      def initialize(login, api_key, options={})
-        @login, @api_key = login.strip, api_key.strip
+      def initialize(options={})        
+        yield options if block_given?
         @config = DEFAULTS.merge! options
+        @login = @config[:login].strip
+        @api_key = @config[:api_key].strip
+        raise ArgumentError, "Login and API key are required!" unless @login and @api_key
         set_up_connection
       end
 

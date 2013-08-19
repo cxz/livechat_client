@@ -1,12 +1,8 @@
-require "rubygems"
-require "minitest/autorun"
-require "webmock/minitest"
-require "uri"
-require "pry"
-require "json"
+$LOAD_PATH << File.join(File.dirname(__FILE__), '..', 'lib')
 
-$: << File.expand_path("../lib")
-require "livechat"
+require 'livechat'
+require 'webmock/rspec'
+require 'json'
 
 def fixture_path
   File.expand_path("../fixtures", __FILE__)
@@ -19,9 +15,9 @@ end
 if ENV["LIVE"]
   LOGIN    = ENV["LIVECHAT_LOGIN"]
   API_KEY = ENV["LIVECHAT_API_KEY"]
-
 else
   LOGIN, API_KEY = "ignored_login", "ignored_api_key"
-  ENDPOINT = URI(LiveChat::Config::DEFAULT_ENDPOINT).host
+  ENDPOINT = "https://#{LOGIN}:#{API_KEY}@ignored:443"
 end
 
+LiveChat::REST::Client::DEFAULTS[:host] = 'ignored'

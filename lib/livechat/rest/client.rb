@@ -71,7 +71,7 @@ module LiveChat
           unless args[1] # build the full path unless already given
             path = "#{path}"
             if method == :get
-              params = restify args[0]
+              params = args[0] if args[0]
               path << "?#{url_encode(params)}" if method == :get && !params.empty?
             end
           end

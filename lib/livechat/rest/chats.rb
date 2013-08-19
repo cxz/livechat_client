@@ -10,7 +10,7 @@ module LiveChat
 
     class Chat < InstanceResource
       def send_transcript(*args)
-        @client.post "#{@path}/send_transcripts", Hash[*args]
+        @client.post "#{@path}/send_transcript", Hash[*args]
         self
       end
     end

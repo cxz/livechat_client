@@ -27,6 +27,9 @@ describe LiveChat::REST::Chats do
 
   it "sends chat transcript to e-mail" do
     @livechat.chats('MH022RD0K5').send_transcript(:to => 'john.doe@mycompany.com')
+    expect(@livechat.last_request.path).to eq '/chats/MH022RD0K5/send_transcript'
+    expect(@livechat.last_request.method).to eq 'POST'
+    expect(@livechat.last_request.body).to eq ''
   end
 
 

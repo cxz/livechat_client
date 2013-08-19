@@ -68,10 +68,10 @@ module LiveChat
         method_class = Net::HTTP.const_get method.to_s.capitalize
         define_method method do |path, *args|
           params ||= {}
+          params = args[0] if args[0]
           unless args[1] # build the full path unless already given
             path = "#{path}"
             if method == :get
-              params = args[0] if args[0]
               path << "?#{url_encode(params)}" if method == :get && !params.empty?
             end
           end
@@ -133,7 +133,7 @@ module LiveChat
           object = MultiJson.load response.body
         end
         if response.kind_of? Net::HTTPClientError
-          raise LiveChat::REST::RequestError.new object['message'], object['code']
+          raise LiveChat::REST::RequestError.new "#{object['message']}: #{response.body}", object['code']
         end
         object
       end

@@ -6,7 +6,8 @@ module LiveChat
     class Goal < InstanceResource
       def mark_as_successful(*args)
         raise "Can't execute without a REST Client" unless @client
-        @client.put "#{@path}/mark_as_successful", args
+        puts "path=#{@path}"
+        @client.post "#{@path}/mark_as_successful", args
         self
       end
     end

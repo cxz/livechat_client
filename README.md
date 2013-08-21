@@ -40,8 +40,8 @@ end
 **List all agents**
 
 ```ruby
-@livechat.agents                          # all agents
-@livechat.agents.each {|user| ..code.. }  # iterate over requested agents
+@livechat.agents.list                     # all agents
+@livechat.agents.each {|a| ..code.. }     # iterate over requested agents
 ```
 
 **Get a single agent details**
@@ -82,7 +82,7 @@ end
 
 **List all canned responses**
 ```ruby
-  @livechat.canned_responses
+  @livechat.canned_responses.list
 ```
 
 **Get a single canned response**
@@ -117,7 +117,7 @@ end
 
 **Get list of chats**
 ```ruby
-  @livechat.chats
+  @livechat.chats.list
 ```
 
 **Get single chat**
@@ -137,7 +137,7 @@ end
 
 **List all goals**
 ```ruby
-  @livechat.goals
+  @livechat.goals.list
 ```
 
 **Get a single goal details**
@@ -177,7 +177,7 @@ end
 
 **List all groups**
 ```ruby
-  @livechat.groups
+  @livechat.groups.list
 ```
 
 **Get a single group details**
@@ -279,7 +279,7 @@ end
 
 **List all visitors**
 ```ruby
-  @livechat.visitors
+  @livechat.visitors.list
 ```
 
 **List only chatting visitors**

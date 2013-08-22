@@ -28,7 +28,7 @@ Basic Auth over HTTPS is used to authenticate API requests.
 ```ruby
 require "livechat"
 
-@livechat = LiveChat::Client.new do |config|
+@livechat = LiveChat::REST::Client.new do |config|
   config[:login] = "joe@example.com"
   config[:api_key] = ""
 end

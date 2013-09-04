@@ -16,7 +16,7 @@ $ git clone git@github.com:cxz/livechat_client.git
 $ cd livechat_client
 $ git checkout -b develop
 $ rake gem
-$ gem install pkg/livechat-client-{version}
+$ gem install pkg/livechat_client-{version}
 ```
 
 

@@ -5,8 +5,8 @@ module LiveChat
         @path, @client = path, client
       end
 
-      def get(group)
-        @client.get "#{@path}/#{group}"
+      def get(params={})
+        @client.get "#{@path}/#{params[:group]}"
       end
     end
   end

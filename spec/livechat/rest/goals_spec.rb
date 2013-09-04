@@ -24,7 +24,9 @@ describe LiveChat::REST::Goals do
   end
 
   it "marks goal as successful" do
-    @livechat.goals(1181).mark_as_successful(:visitor_id => 1)
+    @livechat.goals(1181).mark_as_successful(:visitor_id => 1, :order_id => 'AP723HVCA721')
+    expect(@livechat.last_request.body).to eq 'visitor_id=1&order_id=AP723HVCA721'
+
   end
 
   it "adds a new goal" do

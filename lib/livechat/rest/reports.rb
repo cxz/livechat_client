@@ -73,7 +73,7 @@ module LiveChat
       # group - id of the group, not set by default, returns statistics for the specified group.
       # group_by - defaults to day (or hour when date_from equals date_to), can be set to month or hour.
       def queued_visitors_waiting_times(*args)
-        @client.get "#{@path}/queued_visitors_waiting_times", Hash[*args]
+        @client.get "#{@path}/queued_visitors/waiting_times", Hash[*args]
       end
 
       #http://developers.livechatinc.com/rest-api/#get-availability-report

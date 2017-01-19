@@ -9,7 +9,7 @@ module LiveChat
     class Visitor < InstanceResource
       def add_details(params={})
         yield params if block_given?
-        @client.post(@path, params)
+        @client.post("#{@path}/details", params)
         self
       end
     end

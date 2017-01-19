@@ -9,6 +9,7 @@ module LiveChat
       HTTP_HEADERS = {
         'Accept' => 'application/json',
         'Accept-Charset' => 'utf-8',
+        'Content-Type' => 'application/json',
         'User-Agent' => "livechat-ruby/#{LiveChat::VERSION}",
         'X-API-Version' => API_VERSION
       }
@@ -35,7 +36,7 @@ module LiveChat
           n = klass.new("/#{r}", self)
           if args.length > 0
             n.get(args[0])
-          else 
+          else
             n
           end
         end
@@ -46,7 +47,7 @@ module LiveChat
       # +login+ and +api_key+ are required and used to generate the
       # HTTP basic auth header in each request.
       #
-      def initialize(options={})        
+      def initialize(options={})
         yield options if block_given?
         @config = DEFAULTS.merge! options
         @login = @config[:login].strip
@@ -77,7 +78,7 @@ module LiveChat
           end
           request = method_class.new path, HTTP_HEADERS
           request.basic_auth @login, @api_key
-          request.form_data = params if [:post, :put].include? method
+          request.body = params.to_json if [:post, :put].include? method
           connect_and_send request
         end
       end
@@ -95,7 +96,7 @@ module LiveChat
         @connection.open_timeout = @config[:timeout]
         @connection.read_timeout = @config[:timeout]
       end
- 
+
       ##
       # Set up the ssl properties of the <tt>@connection</tt> Net::HTTP object.
       # This is a private method documented for completeness.

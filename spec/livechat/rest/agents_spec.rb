@@ -2,9 +2,7 @@ require "spec_helper"
 
 include WebMock::API
 
-
 describe LiveChat::REST::Agents do
-
   before do
     @livechat = create_client
 
@@ -13,7 +11,6 @@ describe LiveChat::REST::Agents do
     @alice_id = 'alice@mycompany.com'
 
     stub_rest 'agents'
-
   end
 
   after do
@@ -21,7 +18,7 @@ describe LiveChat::REST::Agents do
   end
 
   it "lists all agents" do
-    agents = @livechat.agents.list    
+    agents = @livechat.agents.list
     expect(agents.length).to be(2)
   end
 
@@ -31,7 +28,7 @@ describe LiveChat::REST::Agents do
   end
 
   it "creates a new agent" do
-    agent = @livechat.agents.create do |a|
+    @livechat.agents.create do |a|
       a[:login] = @alice_id
       a[:name] = 'Alice'
     end
@@ -52,5 +49,4 @@ describe LiveChat::REST::Agents do
   it "removes an agent" do
     @livechat.agents(@alice_id).delete
   end
-
 end

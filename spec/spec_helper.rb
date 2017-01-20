@@ -20,15 +20,15 @@ def stub_rest(resource_name)
   stub_request(:get, "#{base}").to_return(:body => fixture("#{resource_name}.json"))
 end
 
+LiveChat::REST::Client::DEFAULTS[:host] = 'ignored'
+
 if ENV["LIVE"]
   LOGIN    = ENV["LIVECHAT_LOGIN"]
   API_KEY = ENV["LIVECHAT_API_KEY"]
 else
   LOGIN, API_KEY = "ignored_login", "ignored_api_key"
-  ENDPOINT = "https://#{LOGIN}:#{API_KEY}@ignored:443"
+  ENDPOINT = "https://#{LiveChat::REST::Client::DEFAULTS[:host]}"
 end
-
-LiveChat::REST::Client::DEFAULTS[:host] = 'ignored'
 
 def create_client
   LiveChat::REST::Client.new do |config|

@@ -2,7 +2,6 @@ require "spec_helper"
 
 include WebMock::API
 
-
 describe LiveChat::REST::CannedResponses do
   before do
     @livechat = create_client
@@ -23,7 +22,7 @@ describe LiveChat::REST::CannedResponses do
   end
 
   it "creates a new canned response" do
-    canned_response = @livechat.canned_responses.create do |r|
+    @livechat.canned_responses.create do |r|
       r[:text] = 'Have a great day, goodbye.'
       r[:tags] = ['cu', 'bye']
     end
@@ -38,6 +37,5 @@ describe LiveChat::REST::CannedResponses do
   it "removes a canned response" do
     @livechat.canned_responses(0).delete
   end
-
 end
 

@@ -2,7 +2,6 @@ require "spec_helper"
 
 include WebMock::API
 
-
 describe LiveChat::REST::Chats do
   before do
     @livechat = create_client
@@ -13,7 +12,6 @@ describe LiveChat::REST::Chats do
   after do
     WebMock.reset!
   end
-
 
   it "gets list of chats" do
     chats = @livechat.chats
@@ -29,9 +27,7 @@ describe LiveChat::REST::Chats do
     @livechat.chats('MH022RD0K5').send_transcript(:to => 'john.doe@mycompany.com')
     expect(@livechat.last_request.path).to eq '/chats/MH022RD0K5/send_transcript'
     expect(@livechat.last_request.method).to eq 'POST'
-    expect(@livechat.last_request.body).to eq 'to=john.doe%40mycompany.com'
+    expect(@livechat.last_request.body).to eq '{"to":"john.doe@mycompany.com"}'
   end
-
-
 end
 

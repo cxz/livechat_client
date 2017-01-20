@@ -2,12 +2,11 @@ require "spec_helper"
 
 include WebMock::API
 
-
 describe LiveChat::REST::Reports do
   before do
     @livechat = create_client
-    @reports_base = "#{ENDPOINT}/reports"
-    stub_request(:get, /#{@reports_base}/).to_return(:body => {})
+
+    stub_rest 'reports'
   end
 
   after do
@@ -62,6 +61,5 @@ describe LiveChat::REST::Reports do
     @livechat.reports.goals
     expect(@livechat.last_request.path).to eq '/reports/goals'
   end
-
 end
 

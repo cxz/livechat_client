@@ -2,7 +2,6 @@ require "spec_helper"
 
 include WebMock::API
 
-
 describe LiveChat::REST::Groups do
   before do
     @livechat = create_client
@@ -13,7 +12,6 @@ describe LiveChat::REST::Groups do
   after do
     WebMock.reset!
   end
-
 
   it "lists all groups" do
     @livechat.groups
@@ -40,6 +38,5 @@ describe LiveChat::REST::Groups do
   it "removes a group" do
     @livechat.groups(4).delete
   end
-
 end
 

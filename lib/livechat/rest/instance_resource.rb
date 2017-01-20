@@ -19,13 +19,13 @@
 #LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #THE SOFTWARE.
-  
+
 
 module LiveChat
   module REST
     ##
     # A class to wrap an instance resource (like a call or application) within
-    # the LiveChat API. 
+    # the LiveChat API.
     class InstanceResource
       include Utils
 
@@ -49,7 +49,7 @@ module LiveChat
       ##
       # Update the properties of this instance resource using the key/value
       # pairs in +params+. This makes an HTTP POST request to <tt>@path</tt>
-      # to handle the update. 
+      # to handle the update.
       #
       # After returning, the object will contain the most recent state of the
       # instance resource, including the newly updated properties.

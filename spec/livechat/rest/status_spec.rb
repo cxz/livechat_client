@@ -2,7 +2,6 @@ require "spec_helper"
 
 include WebMock::API
 
-
 describe LiveChat::REST::Status do
   before do
     @livechat = create_client
@@ -17,6 +16,5 @@ describe LiveChat::REST::Status do
   it "gets status" do
     @livechat.status(:group => 0)
   end
-
 end
 
